@@ -1,0 +1,25 @@
+---
+import Icon from './Icon.astro';
+import { communities, sources } from '../data/content';
+---
+<section class="container section community-section" id="komunitas" aria-labelledby="community-title">
+  <div class="section-intro"><h2 id="community-title">Ada ruang untuk<br />setiap minat.</h2><p>Kenali orang-orang dengan semangat yang sama.<br class="desktop-break" /> Temukan tempat untuk belajar dan mengambil peran.</p></div>
+  <div class="community-layout">
+    <div class="community-poster">
+      <div class="poster-symbol" aria-hidden="true"><svg viewBox="0 0 160 160" fill="none"><circle cx="60" cy="65" r="38"/><circle cx="100" cy="65" r="38"/><circle cx="80" cy="100" r="38"/></svg></div>
+      <h3>Teman baru.<br />Sudut pandang baru.<br /><span>Kesempatan baru.</span></h3>
+      <p>Ruang tumbuh dimulai<br />dari sebuah pertemuan.</p>
+      <a href="#kegiatan" class="text-link">Jelajahi contoh kegiatan <Icon name="diagonal" size={20}/></a>
+    </div>
+    <div class="community-list">
+      {communities.map(item => <details class="community-item"><summary><span class="community-icon"><Icon name={item.icon} size={26}/></span><span><h3>{item.title}</h3><p>{item.description}</p></span><Icon name="plus" size={22} class="disclosure-icon"/></summary><div class="community-detail">{item.detail}</div></details>)}
+      <p class="draft-note"><span class="status-dot" aria-hidden="true"></span>Contoh pengelompokan. Direktori resmi menyusul setelah konfirmasi.</p>
+    </div>
+  </div>
+</section>
+<section class="achievement-section" id="prestasi" aria-labelledby="achievement-title">
+  <div class="container achievement-layout">
+    <div class="achievement-heading"><h2 id="achievement-title">Langkah berani.<br />Pencapaian berarti.</h2><p>Setiap karya punya cerita.<br />Ini salah satu jejak mahasiswa SiberMu.</p><a class="text-link" href={sources.achievement} target="_blank" rel="noopener noreferrer">Baca berita resmi <Icon name="diagonal" size={19}/></a></div>
+    <article class="achievement-story"><div class="achievement-stamp"><Icon name="trophy" size={38}/><strong>Juara II</strong><span>MIDBRAIN 2023</span></div><div><h3>Ide yang melangkah<br />ke panggung nasional.</h3><span class="content-label">Arsip prestasi · 2023</span><p>Nada Pratiwi dan Rahmat Simbolon meraih juara II lomba esai ilmiah MIDBRAIN 2023 yang diselenggarakan UIN Malang.</p><p class="story-people">Nada Pratiwi & Rahmat Simbolon<small>Mahasiswa Administrasi Kesehatan</small></p><p class="source-date">Sumber: SiberMu · Dipublikasikan 5 Januari 2024</p></div></article>
+  </div>
+</section>

@@ -1,0 +1,15 @@
+.agents/
+.codex/
+.gemini/
+.opencode/
+.impeccable/
+docs/
+node_modules/
+dist/
+.astro/
+.sites-runtime/
+tmp/
+.env
+.env.*
+!.env.example
+

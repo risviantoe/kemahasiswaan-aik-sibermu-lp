@@ -1,0 +1,15 @@
+---
+import Icon from './Icon.astro';
+import { sources } from '../data/content';
+---
+<section class="aik-section" id="aik" aria-labelledby="aik-title">
+  <div class="container">
+    <div class="aik-top"><div><h2 id="aik-title">Berilmu. Beriman.<br /><span>Memberi manfaat.</span></h2><p>Al-Islam dan Kemuhammadiyahan menjadi ruang untuk mengenal nilai, memperdalam pemahaman, dan membawanya ke dalam kehidupan sehari-hari.</p><a href={sources.values} target="_blank" rel="noopener noreferrer" class="button light-button">Kenali Islam Berkemajuan <Icon name="diagonal" size={19}/></a></div><div class="aik-statement"><Icon name="book" size={40}/><p>Ilmu yang<br />menjadi <em>amal.</em></p><span>Belajar dengan sungguh-sungguh.<br />Berkarya dengan jujur.<br />Hadir membawa manfaat.</span></div></div>
+    <div class="aik-pillars">
+      <article><h3>Kajian & keagamaan</h3><p>Ruang memperdalam pemahaman Islam dan mengenal praktik kehidupan beragama.</p><a class="text-link" href="#kegiatan">Lihat contoh topik <Icon size={18}/></a></article>
+      <article><h3>Syiar & kepedulian</h3><p>Menyampaikan kebaikan dan menghubungkan pengetahuan dengan kepedulian kepada sesama.</p><a class="text-link" href="#kegiatan">Jelajahi contoh syiar <Icon size={18}/></a></article>
+      <article><h3>Nilai Kemuhammadiyahan</h3><p>Mengenal dakwah, tajdid, ilmu, dan amal melalui rujukan Risalah Islam Berkemajuan.</p><a class="text-link" href={sources.values} target="_blank" rel="noopener noreferrer">Baca rujukan nilai <Icon name="diagonal" size={18}/></a></article>
+    </div>
+    <p class="aik-footnote">Ringkasan editorial berdasarkan Risalah Islam Berkemajuan. Program dan jadwal AIK kampus menunggu konfirmasi.</p>
+  </div>
+</section>
