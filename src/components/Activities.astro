@@ -3,12 +3,12 @@ import Icon from './Icon.astro';
 import { activities } from '../data/content';
 ---
 <section class="container section activities-section" id="kegiatan" aria-labelledby="activities-title">
-  <div class="section-intro"><h2 id="activities-title">Satu langkah lagi<br />untuk mulai terlibat.</h2><div><p>Jelajahi kemungkinan kegiatan<br />yang mempertemukan minat dan nilai.</p><p class="draft-note">Seluruh topik di bawah adalah contoh prototipe,<br />bukan pengumuman atau pendaftaran resmi.</p></div></div>
-  <div class="activity-controls" role="group" aria-label="Filter contoh kegiatan"><button type="button" data-filter="all" aria-pressed="true">Semua kegiatan</button><button type="button" data-filter="mahasiswa" aria-pressed="false">Kemahasiswaan</button><button type="button" data-filter="aik" aria-pressed="false">AIK</button><span id="activity-count" role="status" aria-live="polite">3 contoh topik</span></div>
+  <div class="section-intro"><h2 id="activities-title">Jejak kegiatan.<br />Arah untuk bertumbuh.</h2><div><p>Kenali program yang pernah dicatat<br />dalam publikasi resmi SiberMu.</p><p class="draft-note">Dokumentasi di bawah bukan pengumuman jadwal<br />atau pendaftaran aktif tahun 2026.</p></div></div>
+  <div class="activity-controls" role="group" aria-label="Filter kegiatan terdokumentasi"><button type="button" data-filter="all" aria-pressed="true">Semua kegiatan</button><button type="button" data-filter="mahasiswa" aria-pressed="false">Kemahasiswaan</button><button type="button" data-filter="aik" aria-pressed="false">AIK</button><span id="activity-count" role="status" aria-live="polite">4 dokumentasi</span></div>
   <div class="activity-list">
-    {activities.map(item => <article class="activity-item" data-category={item.category}><div class:list={['activity-art', item.category]} aria-hidden="true"><Icon name={item.icon} size={34}/></div><div class="activity-info"><h3>{item.title}</h3><div class="activity-meta"><span>{item.label}</span><span class="sample-tag">Contoh</span></div><p><Icon name="clock" size={15}/> Jadwal belum tersedia <span aria-hidden="true">·</span> {item.type}</p><details><summary>Lihat contoh isi <Icon name="plus" size={17}/></summary><p>{item.description}</p></details></div></article>)}
+    {activities.map(item => <article class="activity-item" data-category={item.category}><div class:list={['activity-art', item.category]} aria-hidden="true"><Icon name={item.icon} size={34}/></div><div class="activity-info"><h3>{item.title}</h3><div class="activity-meta"><span>{item.label}</span><span class="sample-tag">{item.status}</span></div><p><Icon name="clock" size={15}/> {item.timing} <span aria-hidden="true">·</span> {item.type}</p><details><summary>Baca ringkasan & sumber <Icon name="plus" size={17}/></summary><p>{item.description}</p><a class="text-link" href={item.source} target="_blank" rel="noopener noreferrer">{item.sourceLabel} <Icon name="diagonal" size={16}/></a></details></div></article>)}
   </div>
-  <noscript><p class="draft-note">Semua contoh ditampilkan. Aktifkan JavaScript untuk memakai filter.</p></noscript>
+  <noscript><p class="draft-note">Semua dokumentasi ditampilkan. Aktifkan JavaScript untuk memakai filter.</p></noscript>
 </section>
 <script>
   const controls = document.querySelectorAll<HTMLButtonElement>('[data-filter]');
@@ -23,6 +23,6 @@ import { activities } from '../data/content';
       item.hidden = !show;
       if (show) visible++;
     });
-    if (count) count.textContent = `${visible} contoh topik`;
+    if (count) count.textContent = `${visible} dokumentasi`;
   }));
 </script>
