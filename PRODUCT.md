@@ -28,3 +28,6 @@ docs/brief lomba web.pdf and docs/strategi-lomba-landing-page-sibermu.md contain
 
 ## Accessibility & Inclusion
 Semantic headings, visible focus, reduced-motion support, accessible mobile navigation, sufficient contrast, and no dependency on hovering for core content.
+
+## Approved Visual Direction
+On 19 September 2026 the user approved navy and blue as the dominant identity, based on the overall SiberMu Instagram feed rather than one contest post. White reading surfaces, restrained gold accents, green limited to AIK, and a stronger editorial hero. Palette values remain adaptations pending an official brand guide. Continue directly in code under the existing authorization.
