@@ -3,34 +3,50 @@ import Icon from './Icon.astro';
 import { communities, sources } from '../data/content';
 ---
 <section class="container section community-section" id="komunitas" aria-labelledby="community-title">
-  <div class="section-intro"><h2 id="community-title">Ada ruang untuk<br />setiap minat.</h2><p>Kenali orang-orang dengan semangat yang sama.<br class="desktop-break" /> Temukan tempat untuk belajar dan mengambil peran.</p></div>
-  <div class="community-layout">
-    <div class="community-poster">
-      <div class="poster-symbol" aria-hidden="true"><svg viewBox="0 0 160 160" fill="none"><circle cx="60" cy="65" r="38"/><circle cx="100" cy="65" r="38"/><circle cx="80" cy="100" r="38"/></svg></div>
-      <h3>Teman baru.<br />Sudut pandang baru.<br /><span>Kesempatan baru.</span></h3>
-      <p>Ruang tumbuh dimulai<br />dari sebuah pertemuan.</p>
-      <a href="#kegiatan" class="text-link">Jelajahi kegiatan terdokumentasi <Icon name="diagonal" size={20}/></a>
+  <div class="community-editorial">
+    <div class="community-invitation">
+      <h2 id="community-title">Temukan lingkunganmu.</h2>
+      <p>Bahasa, bisnis, atau karya digital—kenali komunitas mahasiswa SiberMu dan hal yang bisa kamu kembangkan bersama.</p>
+      <figure class="community-photo">
+        <img src="/images/community-campus-v2.webp" srcset="/images/community-campus-v2-small.webp 720w, /images/community-campus-v2.webp 1440w" sizes="(max-width: 700px) calc(100vw - 40px), 46vw" width="1440" height="960" loading="lazy" decoding="async" alt="Ilustrasi AI empat mahasiswa beralmamater navy berdiskusi bersama di halaman kampus imajinatif" />
+        <figcaption>Ilustrasi AI · Tokoh & bangunan fiktif</figcaption>
+      </figure>
     </div>
-    <div class="community-list">
-      {communities.map(item => <details class="community-item"><summary><span class="community-icon"><Icon name={item.icon} size={26}/></span><span><h3>{item.title}</h3><p>{item.description}</p></span><Icon name="plus" size={22} class="disclosure-icon"/></summary><div class="community-detail"><p>{item.detail}</p><a class="text-link" href={item.source} target="_blank" rel="noopener noreferrer">{item.sourceLabel} <Icon name="diagonal" size={16}/></a></div></details>)}
-      <p class="draft-note"><span class="status-dot" aria-hidden="true"></span>Profil UKM bersumber dari arsip resmi 2023; status aktif dan rekrutmen 2026 perlu konfirmasi.</p>
+    <div class="community-directory">
+      {communities.map(item => (
+        <details class="community-row">
+          <summary>
+            <span><span class="community-name">{item.title}</span><span class="community-description">{item.description}</span></span>
+            <Icon name="plus" size={19} class="disclosure-icon"/>
+          </summary>
+          <div class="community-evidence">
+            <p class="archive-label">{item.status}</p>
+            <p>{item.detail}</p>
+            <a class="text-link" href={item.source} target="_blank" rel="noopener noreferrer">{item.sourceLabel} <Icon name="diagonal" size={16}/></a>
+          </div>
+        </details>
+      ))}
+      <p class="community-archive-note">Profil UKM merujuk laporan 2023. Status aktif, kontak pengurus, dan pendaftaran terbaru perlu dikonfirmasi ke kampus.</p>
     </div>
   </div>
 </section>
-<section class="achievement-feature" id="prestasi" aria-labelledby="achievement-title">
-  <div class="container achievement-feature-panel">
-    <div class="achievement-feature-heading">
-      <h2 id="achievement-title">Langkah berani.<br /><span>Pencapaian berarti.</span></h2>
-      <p>Setiap karya punya cerita.<br />Ini salah satu jejak mahasiswa SiberMu.</p>
-      <div class="achievement-honor"><Icon name="trophy" size={46}/><p><strong>Juara II</strong><span>Esai ilmiah · MIDBRAIN 2023</span></p></div>
+<section class="achievement-section" id="prestasi" aria-labelledby="achievement-title">
+  <div class="container achievement-editorial">
+    <div class="achievement-intro">
+      <h2 id="achievement-title">Juara II esai<br />ilmiah nasional.</h2>
+      <p>MIDBRAIN 2023<br />Medical Scientific Competition and Award of UIN Malang.</p>
+      <a class="text-link" href={sources.achievement} target="_blank" rel="noopener noreferrer">Baca berita prestasi <Icon name="diagonal" size={18}/></a>
     </div>
-    <article class="achievement-feature-story">
-      <span class="achievement-archive">Arsip prestasi · 2023</span>
-      <h3>Ide yang melangkah<br />ke panggung nasional.</h3>
-      <p>Nada Pratiwi dan Rahmat Simbolon meraih juara II lomba esai ilmiah MIDBRAIN 2023 yang diselenggarakan UIN Malang.</p>
-      <p class="achievement-people">Nada Pratiwi & Rahmat Simbolon<small>Mahasiswa Administrasi Kesehatan</small></p>
-      <a class="text-link" href={sources.achievement} target="_blank" rel="noopener noreferrer">Baca berita resmi <Icon name="diagonal" size={19}/></a>
-      <p class="achievement-source">Sumber: SiberMu · Dipublikasikan 5 Januari 2024</p>
+    <article class="achievement-copy" aria-labelledby="achievement-students">
+      <h3 id="achievement-students">Nada Pratiwi &<br />Rahmat Simbolon</h3>
+      <p class="achievement-program">Mahasiswa S1 Administrasi Kesehatan</p>
+      <p>Keduanya meraih penghargaan dalam kompetisi esai ilmiah tingkat nasional yang diselenggarakan UIN Malang.</p>
+      <figure class="achievement-document">
+      <a href={sources.achievement} target="_blank" rel="noopener noreferrer" aria-label="Buka berita resmi prestasi MIDBRAIN 2023">
+        <img src="/images/midbrain-2023.png" width="1140" height="500" loading="lazy" decoding="async" alt="Dokumentasi pengumuman juara kedua esai ilmiah MIDBRAIN 2023 atas nama Nada Pratiwi, dari berita SiberMu" />
+      </a>
+        <figcaption><strong>Dokumentasi penghargaan</strong><span>Pengumuman pada berita resmi SiberMu.</span><span>Dipublikasikan 5 Januari 2024.</span></figcaption>
+      </figure>
     </article>
   </div>
 </section>

@@ -1,24 +1,31 @@
 ---
 import Icon from './Icon.astro';
 import { sources } from '../data/content';
+const principles = [
+  { title: 'Pembinaan', description: 'Memperdalam pemahaman melalui kajian dan pembelajaran keislaman.' },
+  { title: 'Pengamalan', description: 'Menghubungkan nilai Islam dengan tindakan dan kepedulian sehari-hari.' },
+  { title: 'Kemuhammadiyahan', description: 'Mengenal semangat Islam berkemajuan: iman, ilmu, dan amal.' },
+];
 ---
-<section class="aik-feature" id="aik" aria-labelledby="aik-title">
-  <div class="container aik-feature-panel">
-    <div class="aik-feature-intro">
-      <h2 id="aik-title">Berilmu. Beriman.<br /><span>Memberi manfaat.</span></h2>
-      <p>Al-Islam dan Kemuhammadiyahan menjadi ruang untuk mengenal nilai, memperdalam pemahaman, dan membawanya ke dalam kehidupan sehari-hari.</p>
-      <a href={sources.values} target="_blank" rel="noopener noreferrer" class="button aik-feature-action">Kenali Islam Berkemajuan <Icon name="diagonal" size={19}/></a>
-      <figure class="aik-feature-visual">
-        <img src="/images/aik-study-v1.webp" srcset="/images/aik-study-v1-small.webp 640w, /images/aik-study-v1.webp 900w" sizes="(max-width: 900px) calc(100vw - 100px), 40vw" width="900" height="1125" loading="lazy" decoding="async" alt="Ilustrasi AI seorang mahasiswi berhijab membaca buku di dekat jendela" />
-        <figcaption><strong>Ilmu yang menjadi amal.</strong><span>Ilustrasi AI · Tokoh fiktif</span></figcaption>
-      </figure>
+<section class="aik-banner" id="aik" aria-labelledby="aik-title">
+  <div class="aik-stage">
+    <figure class="aik-banner-image">
+      <img src="/images/aik-campus-v2.webp" srcset="/images/aik-campus-v2-small.webp 720w, /images/aik-campus-v2.webp 1440w" sizes="(max-width: 700px) 100vw, (max-width: 1400px) 60vw, 840px" width="1440" height="960" loading="lazy" decoding="async" alt="Ilustrasi AI mahasiswi beralmamater navy dan hijab krem memegang Al-Quran di lingkungan kampus imajinatif" />
+      <figcaption>Ilustrasi AI · Tokoh & bangunan fiktif</figcaption>
+    </figure>
+    <div class="container aik-banner-inner">
+      <div class="aik-banner-copy">
+        <h2 id="aik-title">Teguh dalam nilai.</h2>
+        <p class="aik-name">Al-Islam & Kemuhammadiyahan</p>
+        <p>Ilmu memberi kemampuan.<br />Nilai memberi arah.</p>
+        <div class="aik-actions">
+          <a href="#kegiatan" class="button">Jelajahi kegiatan AIK <Icon size={18}/></a>
+          <a href={sources.values} target="_blank" rel="noopener noreferrer" class="text-link">Kenali Islam Berkemajuan <Icon name="diagonal" size={16}/></a>
+        </div>
+      </div>
     </div>
-    <div class="aik-feature-programs">
-      <article><span class="aik-program-icon"><Icon name="people" size={27}/></span><div><h3>Kegiatan keagamaan</h3><p>Subuh Berjamaah dan Subuh Bergizi menghubungkan ibadah, ukhuwah, dan kesehatan komunitas.</p><a class="text-link" href="#kegiatan">Lihat dokumentasi <Icon size={18}/></a></div></article>
-      <article><span class="aik-program-icon"><Icon name="book" size={27}/></span><div><h3>Kajian</h3><p>Kajian AIK dan Hadis serta Baca Tulis Al-Quran dicatat sebagai bagian pembinaan spiritual.</p><a class="text-link" href={sources.rectorReport} target="_blank" rel="noopener noreferrer">Buka laporan 2024 <Icon name="diagonal" size={18}/></a></div></article>
-      <article><span class="aik-program-icon"><Icon name="heart" size={27}/></span><div><h3>Syiar & kepedulian</h3><p>Masjid Amal Mulya dan kegiatan sosial Islami menjadi penghubung kampus dengan masyarakat.</p><a class="text-link" href="#kegiatan">Lihat jejak program <Icon size={18}/></a></div></article>
-      <article><span class="aik-program-icon"><Icon name="spark" size={27}/></span><div><h3>Nilai Kemuhammadiyahan</h3><p>Islam moderat, inklusif, dan berkemajuan: ilmu dan teknologi tumbuh dalam kerangka akhlak luhur.</p><a class="text-link" href={sources.values} target="_blank" rel="noopener noreferrer">Baca rujukan nilai <Icon name="diagonal" size={18}/></a></div></article>
-    </div>
-    <p class="aik-feature-footnote">Program kegiatan bersumber dari Laporan Rektor 2024 halaman 9–10. Status dan jadwal 2026 tetap perlu dikonfirmasi; ringkasan nilai didampingi Risalah Islam Berkemajuan.</p>
   </div>
+  <dl class="container aik-principles">
+    {principles.map(item => <div><dt>{item.title}</dt><dd>{item.description}</dd></div>)}
+  </dl>
 </section>

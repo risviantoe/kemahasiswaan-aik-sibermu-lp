@@ -2,12 +2,39 @@
 import Icon from './Icon.astro';
 import { faqs, sources } from '../data/content';
 ---
-<section class="services-section" id="layanan" aria-labelledby="services-title"><div class="container">
-  <div class="service-banner"><div><h2 id="services-title">Butuh arahan?<br />Mulai dari sini.</h2><p>Temukan pintu resmi untuk kebutuhan<br />akademik, akun mahasiswa, dan KIP Kuliah.</p></div><div class="service-links"><a href={sources.academicHelp} target="_blank" rel="noopener noreferrer"><span>Bantuan akademik<small>Kontak akademik, persuratan, reset akun, call center, dan keuangan</small></span><Icon name="diagonal" size={25}/></a><a href={sources.studentPortal} target="_blank" rel="noopener noreferrer"><span>Portal Mahasiswa<small>Layanan mahasiswa yang memerlukan akun SiberMu</small></span><Icon name="diagonal" size={25}/></a><a href={sources.admissions} target="_blank" rel="noopener noreferrer"><span>Informasi KIP Kuliah<small>Persyaratan, periode, dan kanal bantuan Kemahasiswaan</small></span><Icon name="diagonal" size={25}/></a></div></div>
-  <div class="faq-layout"><div><h3>Yang mungkin<br />ingin kamu tanyakan.</h3><p>Beberapa hal untuk membantu<br />menemukan langkah berikutnya.</p></div><div class="faq-list">{faqs.map(faq => <details><summary>{faq.question}<Icon name="plus" size={20} class="disclosure-icon"/></summary><p>{faq.answer}</p></details>)}</div></div>
-</div></section>
+<section class="services-section" id="layanan" aria-labelledby="services-title">
+  <div class="container">
+    <div class="services-editorial">
+      <div class="services-copy">
+        <h2 id="services-title">Butuh arahan?</h2>
+        <p>Pilih layanan sesuai kebutuhanmu. Semua tautan mengarah ke kanal resmi SiberMu.</p>
+      </div>
+      <div class="service-directory">
+        <a href={sources.academicHelp} target="_blank" rel="noopener noreferrer"><span><strong>Bantuan akademik</strong><small>Kontak akademik, persuratan, reset akun, dan keuangan.</small></span><Icon name="diagonal" size={19}/></a>
+        <a href={sources.studentPortal} target="_blank" rel="noopener noreferrer"><span><strong>Portal Mahasiswa</strong><small>Akses layanan menggunakan akun mahasiswa SiberMu.</small></span><Icon name="diagonal" size={19}/></a>
+        <a href={sources.admissions} target="_blank" rel="noopener noreferrer"><span><strong>Informasi KIP Kuliah</strong><small>Kenali persyaratan dan informasi pada laman Admisi.</small></span><Icon name="diagonal" size={19}/></a>
+      </div>
+    </div>
+    <div class="faq-layout">
+      <h3>Sebelum melangkah.</h3>
+      <div class="faq-list">{faqs.map(faq => <details><summary>{faq.question}<Icon name="plus" size={19} class="disclosure-icon"/></summary><p>{faq.answer}</p></details>)}</div>
+    </div>
+  </div>
+</section>
+<section class="closing-cta" aria-labelledby="closing-title">
+  <div class="container closing-cta-inner">
+    <div><h2 id="closing-title">Masa kuliahmu adalah<br />sebuah perjalanan.</h2><p>Temukan teman belajar. Kembangkan minatmu. Ambil bagian.</p></div>
+    <a class="button" href="#komunitas">Temukan komunitasmu <Icon size={18}/></a>
+  </div>
+  <p class="container closing-image-credit">Ilustrasi AI · Bangunan fiktif</p>
+</section>
 <footer class="site-footer"><div class="container">
-  <div class="footer-top"><div><a class="footer-brand" href="#beranda">Ruang Tumbuh<span>SiberMu</span></a><p>Terhubung. Bertumbuh. Berkontribusi.</p></div><div class="footer-nav"><a href="#komunitas">Komunitas</a><a href="#aik">Al-Islam & Kemuhammadiyahan</a><a href="#layanan">Layanan mahasiswa</a></div><a href="#beranda" class="back-top" aria-label="Kembali ke atas"><Icon name="arrow" size={24}/></a></div>
-  <details class="credits" id="kredit"><summary>Sumber konten & kredit aset <Icon name="plus" size={17}/></summary><div><p>Prototipe konsep lomba 2026. Halaman ini belum menjadi layanan resmi Universitas Siber Muhammadiyah. Nama peserta dan identitas resmi akan dilengkapi sebelum pengumpulan.</p><ul><li>Organisasi dan UKM: <a href={sources.spmi} target="_blank" rel="noopener noreferrer">Direktori SPMI SiberMu</a>, <a href={sources.studentReport} target="_blank" rel="noopener noreferrer">Laporan Kemahasiswaan 2023</a>, dan <a href={sources.organization} target="_blank" rel="noopener noreferrer">Struktur FATIKES</a>.</li><li>Prestasi: <a href={sources.achievement} target="_blank" rel="noopener noreferrer">Berita SiberMu tentang MIDBRAIN 2023</a>.</li><li>Program AIK: <a href={sources.rectorReport} target="_blank" rel="noopener noreferrer">Laporan Rektor 2024, halaman 9–10</a>.</li><li>Layanan: <a href={sources.academicHelp} target="_blank" rel="noopener noreferrer">artikel bantuan akademik</a> dan <a href={sources.admissions} target="_blank" rel="noopener noreferrer">Laman Admisi SiberMu</a>.</li><li>Nilai AIK: <a href={sources.values} target="_blank" rel="noopener noreferrer">Risalah Islam Berkemajuan — Khazanah Muhammadiyah</a>.</li><li>Ilustrasi hero dan ilustrasi membaca pada bagian AIK dibuat dengan OpenAI Imagegen. Tokoh dan bangunan pada hero bersifat fiktif, bukan dokumentasi mahasiswa atau fasilitas SiberMu.</li><li>Huruf: Manrope dan Public Sans, SIL Open Font License 1.1, disediakan melalui Fontsource. Ikon dan tanda grafis dibuat dalam SVG untuk prototipe; bukan logo resmi universitas.</li><li>Label tahun menunjukkan dokumentasi historis, bukan status aktif, jadwal, atau pendaftaran 2026.</li></ul></div></details>
+  <div class="footer-top">
+    <div><a class="footer-brand" href="#beranda">Ruang Tumbuh<span>SiberMu</span></a><p class="footer-brand-copy">Kemahasiswaan & Al-Islam dan Kemuhammadiyahan.<br />Universitas Siber Muhammadiyah.</p></div>
+    <nav class="footer-nav" aria-label="Jelajahi halaman"><h3>Jelajahi</h3><a href="#komunitas">Organisasi & komunitas</a><a href="#aik">Al-Islam & Kemuhammadiyahan</a><a href="#prestasi">Prestasi mahasiswa</a><a href="#kegiatan">Dokumentasi kegiatan</a></nav>
+    <nav class="footer-nav" aria-label="Kanal resmi SiberMu"><h3>Kanal resmi</h3><a href={sources.university} target="_blank" rel="noopener noreferrer">Website SiberMu</a><a href={sources.studentPortal} target="_blank" rel="noopener noreferrer">Portal Mahasiswa</a><a href={sources.academicHelp} target="_blank" rel="noopener noreferrer">Bantuan akademik</a><a href={sources.admissions} target="_blank" rel="noopener noreferrer">Admisi & KIP Kuliah</a></nav>
+    <a href="#beranda" class="back-top" aria-label="Kembali ke atas"><Icon name="arrow" size={24}/></a>
+  </div>
+  <details class="credits" id="kredit"><summary>Sumber konten & kredit aset <Icon name="plus" size={17}/></summary><div><p>Konsep landing page untuk kebutuhan lomba 2026. Halaman ini belum menjadi layanan resmi Universitas Siber Muhammadiyah.</p><ul><li>Organisasi dan UKM: <a href={sources.spmi} target="_blank" rel="noopener noreferrer">Direktori SPMI SiberMu</a>, <a href={sources.studentReport} target="_blank" rel="noopener noreferrer">Laporan Kemahasiswaan 2023</a>, dan <a href={sources.organization} target="_blank" rel="noopener noreferrer">Struktur FATIKES</a>.</li><li>Prestasi: <a href={sources.achievement} target="_blank" rel="noopener noreferrer">Berita dan gambar pengumuman MIDBRAIN 2023 dari SiberMu</a>.</li><li>Program AIK: <a href={sources.rectorReport} target="_blank" rel="noopener noreferrer">Laporan Rektor 2024, halaman 9–10</a>.</li><li>Layanan: <a href={sources.academicHelp} target="_blank" rel="noopener noreferrer">artikel bantuan akademik</a> dan <a href={sources.admissions} target="_blank" rel="noopener noreferrer">Laman Admisi SiberMu</a>.</li><li>Nilai AIK: <a href={sources.values} target="_blank" rel="noopener noreferrer">Risalah Islam Berkemajuan — Khazanah Muhammadiyah</a>.</li><li>Ilustrasi hero, kolaborasi, bagian AIK, dan penutup dibuat dengan OpenAI Imagegen. Tokoh serta bangunan bersifat fiktif, bukan dokumentasi mahasiswa atau fasilitas SiberMu.</li><li>Huruf: Source Serif 4, Manrope, dan Public Sans, SIL Open Font License 1.1, disediakan melalui Fontsource. Ikon dan tanda grafis dibuat dalam SVG untuk konsep ini; bukan logo resmi universitas.</li><li>Label tahun menunjukkan dokumentasi historis, bukan status aktif, jadwal, atau pendaftaran 2026.</li></ul></div></details>
   <div class="footer-bottom"><span>Konsep landing page · SiberMu 2026</span><span>Dibuat untuk ruang tumbuh yang lebih dekat.</span></div>
 </div></footer>

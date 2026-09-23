@@ -1,0 +1,8 @@
+{
+  "generator": "OpenAI Imagegen built-in",
+  "createdAt": "2026-09-22",
+  "fictional": true,
+  "prompt": "Create a photorealistic editorial university campaign photograph, a wide landscape 3:2 image for the RIGHT HALF of a navy website banner. Indonesian female university student aged about 21, beige hijab and dark navy university blazer WITHOUT any logo, text or badge, holding a closed dark blue hardcover Quran with a simple gold ornamental border (no lettering) visibly at chest/waist height with natural hands. Show from mid waist up, the complete book and whole head with comfortable space above. Calm hopeful expression, looking slightly up and left, face at about 67 percent of image width. Bright contemporary white Indonesian campus and subtle mosque minaret in distant soft background, trees, pale sky blue. Natural photographic texture, sophisticated real lighting, navy and pale blue color grading matching a university prospectus. Campus background subtly darker on left with no foreground objects there, subject on right. Fictional person and building. No text, no logos, no graphic motifs, no layout, no UI. Framing must retain the book and head when displayed as a wide banner. Output a standalone photograph.",
+  "original": "C:/Users/edwin/.codex/generated_images/01a08e7b-65f4-7c61-8412-4da145b44739/exec-4bc391a8-a152-421b-aef9-d7e01351b90f.png",
+  "processing": "WebP encoding at 1440px and 720px wide; no compositing or crop."
+}
