@@ -1,30 +1,19 @@
 ---
 name: Ruang Tumbuh SiberMu
-description: Navy and blue editorial identity inspired by the recurring visual language of SiberMu's Instagram feed.
+description: Navy institutional landing page with serif section headlines, integrated photography, and open student directories.
 colors:
-  navy: "#122b49"
-  deep: "#0a1c32"
-  sky: "#9bd7f5"
+  navy: "#103063"
+  deep: "#0b2146"
+  night: "#0a1c32"
+  sky: "#e5edfa"
   blue: "#2169ad"
-  sky-surface: "#dceefd"
-  gold: "#dbba77"
-  aik-accent: "#a8dec3"
-  ink: "#152c46"
+  ink: "#172b49"
   muted: "#53677c"
   paper: "#ffffff"
   line: "#dce5ef"
-  notice-surface: "#edf4fa"
-  quiet-surface: "#f2f6fb"
-  poster-surface: "#e4effa"
-  hero-surface: "#edf5fb"
-  hero-arch: "#d2e7f7"
-  aik-surface: "#f0f7f8"
-  aik-ink: "#276348"
-  inverse-copy: "#c8d8e9"
-  inverse-line: "#3d5772"
-  draft: "#785c24"
-  archive-surface: "#f1ecd9"
-  archive-ink: "#786028"
+  quiet-surface: "#f4f6fa"
+  hero-surface: "#eef3fa"
+  inverse-copy: "#ccd8eb"
 typography:
   display:
     fontFamily: "Manrope Variable, sans-serif"
@@ -33,16 +22,16 @@ typography:
     lineHeight: 1.08
     letterSpacing: "-0.04em"
   headline:
-    fontFamily: "Manrope Variable, sans-serif"
-    fontSize: "clamp(2rem, 3.5vw, 3.2rem)"
-    fontWeight: 650
-    lineHeight: 1.16
-    letterSpacing: "-0.04em"
+    fontFamily: "Source Serif 4 Variable, serif"
+    fontSize: "clamp(2.15rem, 3.4vw, 3.1rem)"
+    fontWeight: 500
+    lineHeight: 1.12
+    letterSpacing: "-0.035em"
   title:
-    fontFamily: "Manrope Variable, sans-serif"
-    fontSize: "1.4rem"
-    lineHeight: 1.35
-    letterSpacing: "-0.025em"
+    fontFamily: "Public Sans Variable, sans-serif"
+    fontSize: "1.05rem"
+    fontWeight: 600
+    lineHeight: 1.4
   body:
     fontFamily: "Public Sans Variable, sans-serif"
     fontSize: "16px"
@@ -56,149 +45,84 @@ typography:
     fontFamily: "Public Sans Variable, sans-serif"
     fontSize: "0.75rem"
 rounded:
-  tag: "4px"
   control: "6px"
-  surface: "14px"
-  filter: "30px"
-  circle: "50%"
+  photograph: "4px"
 spacing:
-  inline-small: "12px"
-  copy-gap: "20px"
-  section-gap: "40px"
-  split-gap: "68px"
-  section-block: "88px"
-  mobile-section-block: "58px"
+  section-block: "76px"
+  mobile-section-block: "48px"
+  split-gap: "72px"
 components:
   button-primary:
     backgroundColor: "{colors.navy}"
     textColor: "{colors.paper}"
-    typography: "{typography.action}"
     rounded: "{rounded.control}"
     padding: "13px 22px"
-  button-hero:
-    backgroundColor: "{colors.blue}"
-    textColor: "{colors.paper}"
-    typography: "{typography.action}"
-    rounded: "{rounded.control}"
-    padding: "13px 22px"
-  button-aik:
-    backgroundColor: "{colors.navy}"
-    textColor: "{colors.paper}"
-    typography: "{typography.action}"
-    rounded: "{rounded.control}"
-    padding: "13px 22px"
-  filter-selected:
-    backgroundColor: "{colors.navy}"
-    textColor: "{colors.paper}"
-    rounded: "{rounded.filter}"
-    padding: "10px 20px"
-  archive-tag:
-    backgroundColor: "{colors.archive-surface}"
-    textColor: "{colors.archive-ink}"
-    typography: "{typography.metadata}"
-    rounded: "{rounded.tag}"
-    padding: "2px 9px"
-  community-poster:
-    backgroundColor: "{colors.poster-surface}"
-    rounded: "{rounded.surface}"
-    padding: "36px"
-  service-banner:
-    backgroundColor: "{colors.sky-surface}"
-    rounded: "{rounded.surface}"
-    padding: "45px 48px"
+  community-row:
+    backgroundColor: "transparent"
+    textColor: "{colors.ink}"
+    padding: "24px 0"
+  activity-row:
+    backgroundColor: "transparent"
+    textColor: "{colors.ink}"
+    padding: "24px 0"
+  service-link:
+    backgroundColor: "transparent"
+    textColor: "{colors.ink}"
+    padding: "20px 0"
 ---
 
 # Design System: Ruang Tumbuh SiberMu
 
-## Overview
+## Direction and authority
 
-**Creative North Star: "SiberMu Digital Editorial"**
+The user's self-created references dated 20 September 2026, 05:51:53 PM and 22 September 2026, 06:30:00 AM are the visual authority for the sections after the approved hero. The latest approved refinement addresses the supplied live screenshot: coherent navy campus photography, larger supporting type, separate introduction and journey, substantive AIK, a story-led achievement section, and different compositions for the archive and services.
 
-A student-facing editorial identity with strong navy fields, white reading surfaces, blue wayfinding, and a human focal photograph. The palette follows recurring treatments across SiberMu's Instagram profile, highlights, and multiple posts, rather than the competition poster alone. This direction was approved by the user on 19 September 2026.
+The previous treatment of large repeated cards, icon discs, and decorative numbered fact lists is superseded. Icons indicate actions, navigation, or disclosures. Sequence numbers belong only to the four-step journey.
 
-The color values are design adaptations, not verified official brand specifications. The existing geometric mark remains provisional. Hero students and the AIK reading scene are labelled AI illustrations of fictional people.
+The palette now follows the user-supplied SiberMu emblem image, approved on 23 September: sampled primary navy #103063, deep navy #0b2146, and near-black navy #040c19. These are samples of the supplied gradient image, not claimed official brand-manual values. The existing geometric mark remains provisional.
 
-**Key Characteristics:**
+Navy carries the hero headline, primary action, section titles, and benefit headings. Hero emphasis uses weight 700 instead of a brighter blue. Blue #2169ad is reserved mainly for links and interaction cues. White and quiet pale-blue reading surfaces remain. AIK uses deep navy, with matching RGB gradient stops around its photograph. The closing overlay uses the same deep navy. After screenshot review, the user restored the footer to its previous #0a1c32 because #040c19 was too dark. Buttons on dark surfaces are white with navy text and a pale-blue hover. Focus and selection retain visible contrast.
 
-- Navy institutional anchors and blue student-facing actions.
-- White reading surfaces, restrained gold achievement accents, and green AIK details.
-- Manrope display typography with Public Sans for reading and controls.
-- Flat fields, editorial asymmetry, native disclosures, and visible archive status.
+## Typography and layout
 
-## Colors
+The approved hero and header retain Manrope. Section headlines use locally bundled Source Serif 4, weight 500, with Public Sans for text and controls. Headings use balanced wrapping and no tracking below -0.04em.
 
-### Primary
+Desktop content stays within 1232px with 56px minimum side gutters; gutters reduce to 32px and then 20px. Section spacing varies with purpose, from the compact archive and service bands to the open community section.
 
-Navy anchors hero typography, the achievement panel, and selected controls. Deep anchors the footer. The hero uses an ice-blue surface, blue emphasized text and a blue primary action. Blue also provides text-link color and focus outlines on light surfaces. Image credits use readable dark text below the images.
+Section compositions:
+- Introduction: a student-facing statement and four serif benefit headings in a two-by-two layout.
+- Journey: a separate pale band with four linked steps, larger sequence numbers and horizontal connectors.
+- AIK: navy banner using a landscape image that keeps the face and book visible, followed by three open explanations of pembinaan, pengamalan and Kemuhammadiyahan. Specific program descriptions live in Activities, once.
+- Community: shared invitation and photograph on the left; four equal native disclosure rows on the right. English Club has no arbitrary featured treatment.
+- Achievement: the introduction sits beside one verified MIDBRAIN story. The original announcement is a smaller evidence figure below the story with a readable caption. Do not crop the announcement or generate fictional winners.
+- Activities: introductory copy beside a filterable archive; dates, expandable titles, and the live result count remain intact.
+- Services: three verified external destinations in a horizontal open group on desktop, stacked on mobile. Two FAQs address joining and archive status.
+- Closing: a dedicated navy-tinted fictional campus image without people and one community CTA. Footer navigation groups internal sections and verified official destinations.
 
-### Secondary
+Supporting reading copy generally uses 0.94–1rem, with titles around 1.05–1.1rem. Archive metadata and image credits remain subordinate. Avoid shrinking whole sections to metadata scale.
 
-Gold marks the achievement heading and award on navy. AIK uses a pale blue-green surface with local dark-green emphasis and links. Its main action remains navy with white text.
+23 September screenshot refinement: the AIK photograph anchors directly to the right edge, retaining its 840px cap to protect the subject crop, and blends into navy at the bottom. The achievement's main heading names the award; the two students' names use a smaller, clear sans-serif heading instead of a competing editorial slogan. The introductory section has tighter vertical spacing, while the journey uses shorter copy, larger step labels and numbers, and closer internal grouping. No browser review was performed; the user owns screenshot and manual visual verification.
 
-### Neutral
+## Responsive behavior
 
-Paper supports the header and reading sections. Ink and Muted provide light-surface reading hierarchy. Line separates rows. Quiet Surface supports quick routes and services; Poster Surface supports the community invitation. Sky Surface fills the services panel. Inverse Copy and Inverse Line support dark sections. Draft and archive tokens communicate historical status.
+Community columns align at the top even when every disclosure is open. The invitation column sticks 7.5rem below the viewport top only at widths above 900px and heights of at least 46rem, leaving clearance below the header and room for the full image/copy. On mobile and short viewports it scrolls normally. Native disclosures remain independently openable; do not introduce exclusive-open behavior. Shared archive notices carry the general current-status caveat, while individual details retain historical facts, specific missing information, and source links.
 
-**The Institutional Color Rule.** Navy and blue carry the university identity; green is reserved for AIK context and must not become the page-wide theme again.
+The journey and services descriptions sit directly below their section headings at every viewport width, following the user's 23 September feedback. Keep these heading/description groups left-aligned with a 12–14px gap; do not return the descriptions to a separate right-hand column.
 
-**The Evidence Rule.** Treat the palette as a feed-inspired adaptation until a university brand guide provides official values.
+Journey reduces to two columns below 901px. The activity archive moves below its introduction at that width. Community, achievement, services, and archive headings stack below 701px. AIK moves its image below the copy at that breakpoint, preserving its 3:2 aspect ratio with a vertical navy blend; its three principles become rows. Activity metadata moves above its title below 641px. Hero breakpoints are preserved.
 
-## Typography
+## Evidence and assets
 
-Manrope Variable carries headings; Public Sans Variable carries body copy, navigation, metadata, and actions. Both fonts are locally bundled. Headings use compact tracking and paragraphs use open line spacing.
+Historical years and source links remain visible or accessible in native details. Do not imply current recruitment, schedules, or organization officers without confirmation.
 
-The hero puts “Kemahasiswaan & AIK · SiberMu” above a two-part heading: “Belajar dari mana saja. Tumbuh bersama siapa saja.” Each message has a deliberate phrase break, producing four lines at tested sizes. The hero display scales across 1100px and 900px, then uses `clamp(2.125rem, 9.2vw, 2.5rem)` at 640px. Metadata is contextual: archive tags, AIK footnotes, and mobile activity metadata use the recorded metadata role. Some secondary legacy captions remain smaller and are not promoted into a new global minimum.
+Hero, AIK, community, and closing artwork are AI illustrations of fictional people/buildings; each image placement carries a visible label. The MIDBRAIN image is original documentation from the official SiberMu article, published 5 January 2024. Its provenance is stored next to the local asset.
 
-**The Heading First Rule.** Put each program title before its category, archive label, and source information.
+All three fonts use the SIL Open Font License and are served locally through Fontsource.
 
-## Layout
+The generated asset set and full prompts are recorded in docs/editorial-assets-2026-09-22.md. Each new asset has 1440px and 720px WebP variants and a provenance JSON file. Original generated files are retained outside the public build.
 
-The container is capped at 1232px, with 56px gutters on desktop, 32px below 1100px, and 20px below 640px. Standard sections use generous vertical spacing. Community and achievement content keep asymmetric column relationships.
+## Interaction and verification
 
-The desktop hero uses a full-width 2:1 photographic campaign illustration: three fictional students, imaginary campus architecture, sky and a sweeping pale foreground. Live HTML copy occupies the left 46%, over a light contrast scrim. The minimum desktop height is 640px (600px at 901–1100px). The image uses cover with center 25% positioning to retain heads on wide screens. The caption explicitly identifies fictional people and buildings. The baseline and quick routes remain below. Updated 21 September 2026 following the user's reference.
+Preserve skip link, mobile navigation/Escape behavior, native disclosures, visible focus, reduced motion, and activity filtering. External destinations use noopener noreferrer.
 
-At 900px navigation becomes a mobile menu; hero copy precedes a separate full-width image area, 440px tall on tablet and clamp(280px,78vw,420px) below 640px. The crop aligns right to preserve the student group. Image credit remains below on mobile. Achievement stacks below 640px and AIK below 900px. Other section layouts are unchanged.
-
-## Elevation & Depth
-
-There are no box shadows or glass UI layers. The hero artwork provides photographic depth through sky, architecture and foreground figures. A light CSS scrim supports readable live text; the former geometric arch has been removed.
-
-**The Flat Surface Rule.** Use surface color and composition to express hierarchy.
-
-## Shapes
-
-Controls use small rounded corners, content panels use 14–16px radii, filters are pills, and the back-to-top control is circular. The AIK reading image has one pronounced upper-left corner, 72px at desktop and 56px on mobile; other corners are 6px. The hero uses an integrated photographic composition with an illustrated pale wave at its base. Achievement emphasis uses oversized gold award text and an existing trophy icon.
-
-## Components
-
-### Actions and navigation
-
-The hero primary action uses Blue and Paper. General primary actions and the AIK action use Navy and Paper. Buttons are at least 50px tall, lift 2px on hover, and use a visible 3px focus outline. Text links are at least 44px tall and underline on hover. Dark surfaces use a light focus outline.
-
-The white sticky header uses navy typography and the existing provisional mark. Its mobile toggle has an accessible expanded state, closes on selection or Escape, and returns focus on Escape.
-
-### Filters, disclosures, and status
-
-Filters use pressed states and a polite live count. Native details/summary disclose community and activity descriptions, FAQ answers, and credits. Archive tags are amber, descriptive, and noninteractive. Historical content remains labelled with its year.
-
-### Panels and imagery
-
-The community panel is pale blue. The services panel uses a separate sky-tinted surface. Activity entries remain divided rows, with blue student-life icon blocks and green AIK icon blocks. The footer is Deep with light-blue support text.
-
-The hero uses `hero-campus-v3.webp` (1774×887, 114,902 bytes) with a 1000px responsive variant (55,952 bytes). People and architecture are fictional AI imagery. AIK uses `aik-study-v1.webp`, also with a 640px variant. Adjacent JSON manifests preserve complete generation prompts and fictional-image provenance. The hero image enters from 10px below while opacity changes from .92 to 1 over 600ms, only when reduced motion is not requested. Text is visible from first render. Other interaction transitions last 200ms. Reduced-motion mode disables transitions, animations, and smooth scrolling.
-
-## Do's and Don'ts
-
-### Do:
-
-- Do use navy and blue as the dominant institutional colors.
-- Do keep gold restrained and green specific to AIK.
-- Do preserve readable status labels and the provenance of imagery.
-- Do preserve keyboard focus, native disclosures, and reduced-motion behavior.
-
-### Don't:
-
-- Don't claim these adapted hex values are an official brand guide.
-- Don't present the provisional mark or AI image as official university assets.
-- Don't let decorative motion hide content before it loads.
-- Don't copy the competitor's VR figure or poster composition.
+For the 22 September implementation the user explicitly owns post-implementation visual checks. Do not run browser screenshots or delegate UI review unless asked. Source checks are separate from visual approval; do not claim the rendered design was validated when it was not.
