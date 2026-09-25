@@ -45,7 +45,7 @@
 .journey-step-line { display:flex; align-items:center; gap:18px; margin-bottom:12px; }
 .journey-number { font-family:var(--font-editorial); font-size:1.9rem; line-height:1; color:var(--navy); }
 .journey-connector { display:flex; align-items:center; flex:1; color:var(--blue); }
-.journey-connector::before { content:''; flex:1; height:1px; background:#abc7df; }
+.journey-connector::before { content:''; flex:1; height:1px; background:var(--blue); }
 .journey-connector svg { margin-left:-8px; }
 .journey-steps h3 { font-family:'Public Sans Variable',sans-serif; font-size:1.15rem; font-weight:650; }
 .journey-steps h3 a { display:inline-block; padding-block:5px; margin-top:-5px; }
@@ -83,7 +83,7 @@
 .community-invitation h2 { font-size:clamp(2.1rem,3vw,2.7rem); text-wrap:initial; }
 .community-invitation>p { max-width:46ch; margin-top:18px; color:var(--muted); font-size:1rem; }
 .community-photo { margin-top:28px; }
-.community-photo img { width:100%; aspect-ratio:1.6; height:auto; object-fit:cover; object-position:center 55%; border-radius:4px; }
+.community-photo img { width:100%; aspect-ratio:1.6; height:auto; object-fit:cover; object-position:right 55%; border-radius:4px; }
 .community-photo figcaption { margin-top:9px; color:var(--muted); font-size:.73rem; }
 .community-row { border-bottom:1px solid var(--line); }
 .community-row summary { display:flex; align-items:center; justify-content:space-between; gap:24px; padding-block:23px; }
@@ -163,12 +163,23 @@
 .closing-cta .button { flex-shrink:0; background:var(--paper); color:var(--navy); font-size:.92rem; }
 .closing-cta .button:hover { background:var(--sky); }
 .closing-image-credit { padding-bottom:14px; text-align:right; font-size:.72rem; color:var(--inverse-copy); }
-.footer-top { display:grid; grid-template-columns:1.25fr .8fr 1fr auto; gap:40px; }
+.footer-top { position:relative; display:grid; grid-template-columns:1.15fr .8fr .8fr 1.25fr; gap:36px; }
+.footer-top>* { min-width:0; }
+.footer-top .back-top { position:absolute; right:0; top:0; }
 .footer-brand-copy { max-width:31ch; }
 .footer-top .footer-brand-copy { font-size:.9rem; }
 .footer-nav { margin:0; font-size:.88rem; }
-.footer-nav h3 { margin-bottom:6px; font-family:'Public Sans Variable',sans-serif; font-size:.94rem; font-weight:600; color:var(--paper); }
+.footer-nav h3,.footer-contact h3 { margin-bottom:6px; font-family:'Public Sans Variable',sans-serif; font-size:.94rem; font-weight:600; color:var(--paper); }
 .footer-nav a { color:var(--inverse-copy); }
+.footer-social { display:flex; flex-wrap:nowrap; gap:8px; margin-top:20px; }
+.footer-social a { display:flex; align-items:center; justify-content:center; flex:0 0 44px; height:44px; border:1px solid #3d5772; border-radius:6px; color:var(--inverse-copy); }
+.footer-social svg { flex-shrink:0; }
+.footer-social a:hover,.footer-contact a:hover { color:var(--paper); text-decoration:underline; text-underline-offset:4px; }
+.footer-contact h3 { padding-right:54px; }
+.footer-contact address { display:grid; gap:18px; margin-top:20px; font-style:normal; font-size:.88rem; line-height:1.65; }
+.footer-contact-label { display:block; margin-bottom:3px; color:var(--inverse-copy); font-size:.76rem; }
+.footer-contact a { display:inline-block; color:var(--paper); overflow-wrap:anywhere; }
+.site-footer :focus-visible { outline-color:var(--sky); }
 
 /* Keep the whole invitation visible below the header; short viewports scroll normally. */
 @media (min-width:901px) and (min-height:46rem) {
@@ -192,7 +203,9 @@
   .activity-period { padding-top:18px; }
   .activity-period span { display:inline; margin-left:12px; }
   .activity-disclosure summary { padding-top:9px; }
-  .footer-top { gap:28px; }
+  .footer-top { grid-template-columns:1fr 1fr; gap:36px 48px; }
+  .footer-identity { padding-right:58px; }
+  .footer-top .footer-nav:first-of-type { padding-right:58px; }
 }
 @media (max-width:900px) {
   .campaign-hero .hero { flex-direction:column; align-items:stretch; gap:0; min-height:0; padding-block:36px 0; }
@@ -289,5 +302,7 @@
   .closing-cta-inner { padding-block:38px 24px; }
   .footer-top { grid-template-columns:1fr 1fr; gap:28px 20px; }
   .footer-top>div:first-child { grid-column:1 / -1; padding-right:58px; }
+  .footer-contact { grid-column:1 / -1; padding-top:24px; border-top:1px solid #3d5772; }
+  .footer-top .footer-nav:first-of-type { padding-right:0; }
   .footer-top .back-top { position:absolute; right:0; top:0; }
 }

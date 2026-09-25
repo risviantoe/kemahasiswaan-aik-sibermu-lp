@@ -1,5 +1,8 @@
 export const sources = {
   university: 'https://sibermu.ac.id/',
+  profile: 'https://sibermu.ac.id/profil/',
+  socialDirectory: 'https://linktr.ee/Sibermu',
+  logo: 'https://sibermu.ac.id/wp-content/uploads/2022/09/New-Logo-SiberMu-Full-Color.png',
   admissions: 'https://sibermu.ac.id/admisi/',
   achievement: 'https://sibermu.ac.id/artikel/mahasiswa-sibermu-berhasil-juarai-lomba-esai-ilmiah-tingkat-nasional-medical-scientific-competition-and-award-of-uin-malang-midbrain-2023/',
   values: 'https://khazanah.muhammadiyah.or.id/collections/risalah-islam-berkemajuan-keputusan-muktamar-ke-48-muhammadiyah-tahun-2022',
@@ -10,6 +13,24 @@ export const sources = {
   academicHelp: 'https://sibermu.ac.id/artikel/video-tutorial-krs/',
   studentPortal: 'https://student.sibermu.ac.id/',
   academicInfo: 'https://sibermu.ac.id/akademik/',
+};
+
+// Akun ditautkan dari Linktree SiberMu; YouTube/TikTok juga tercantum di academicHelp.
+export const socialLinks = [
+  { name: 'Instagram', icon: 'instagram', href: 'https://www.instagram.com/sibermu/' },
+  { name: 'TikTok', icon: 'tiktok', href: 'https://www.tiktok.com/@sibermu' },
+  { name: 'YouTube', icon: 'youtube', href: 'https://www.youtube.com/@sibermu' },
+  { name: 'Facebook', icon: 'facebook', href: 'https://www.facebook.com/sibermu/' },
+];
+
+// Email dan alamat dari sources.profile; nomor WhatsApp dari brief lomba,
+// dikonfirmasi pengguna pada 25 September 2026.
+export const universityContact = {
+  email: 'humas@sibermu.ac.id',
+  phone: '+62 851-7994-6901',
+  whatsapp: 'https://wa.me/6285179946901',
+  address: 'Jl. HOS Cokroaminoto No. 17, RT 53/RW 12, Pakuncen, Wirobrajan, Kota Yogyakarta, DIY 55253',
+  maps: 'https://www.google.com/maps/search/?api=1&query=Universitas%20Siber%20Muhammadiyah%20Jalan%20HOS%20Cokroaminoto%2017%20Yogyakarta',
 };
 
 // Dokumentasi historis dari sumber resmi. Status dan tahun sengaja terlihat agar

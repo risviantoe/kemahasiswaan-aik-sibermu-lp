@@ -1,0 +1,31 @@
+{
+  "key": "HeroCollar",
+  "slug": "hero-campus-v4",
+  "source": "exec-5af36949-d8c3-4196-998c-fc7c4a5bda81.png",
+  "widths": [
+    1774,
+    1000
+  ],
+  "prompt": "Perform a precise localized retouch on the supplied 1774x887 wide university hero image. The ONLY requested change is the duplicated collar on the large foreground man holding a silver laptop. His navy shirt currently has two nested sets of collars: a small inner button-down collar at the base of his neck and an extra oversized outer pointed collar below it. Replace this faulty layered construction with ONE normal navy button-up shirt collar: a single collar band around the neck and exactly two natural collar tips, one per side, connected cleanly to ONE continuous front button placket. Remove the redundant inner/outer collar layer and duplicated collar buttons. The shirt remains the same navy fabric, same light, same folds elsewhere, same shoulder seams and backpack straps. Preserve the original unbuttoned top and natural visible neck. Do not turn it into a jacket or add a T-shirt.\nSTRICT INVARIANTS: preserve all three people's exact faces, identities, facial expressions, hair, skin tone, pose, hands and scale. Preserve woman's cream hijab fully covering hair and neck, male at far right, laptop, books, backpacks, existing architecture, sky, trees, blue abstract shapes, pale left negative space and lower white/blue wave. Do not regenerate, beautify or restyle people. Preserve the full original landscape canvas, framing, subject positions, color grading and photorealism. No crop, no added text, no logo, no watermark. Keep everything outside the main man's collar/upper-shirt neckline as unchanged as possible. Output the corrected full image.",
+  "generator": "OpenAI Imagegen built-in edit",
+  "created": "2026-09-25",
+  "fictional": true,
+  "reference": "public/images/hero-campus-v3.webp",
+  "review": "Retouched duplicate collar of foreground male student into a single navy shirt collar. Standalone image inspected. Generative editing may alter incidental texture; composition and identities remain visually similar. Browser review remains with user.",
+  "rightsNote": "Fictional AI people and architecture. No rights-clearance claim.",
+  "transformations": "Resize and WebP encoding only; no crop or compositing.",
+  "variants": [
+    {
+      "filename": "hero-campus-v4.webp",
+      "width": 1774,
+      "height": 887,
+      "bytes": 101916
+    },
+    {
+      "filename": "hero-campus-v4-small.webp",
+      "width": 1000,
+      "height": 500,
+      "bytes": 50212
+    }
+  ]
+}
