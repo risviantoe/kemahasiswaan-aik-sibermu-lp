@@ -18,9 +18,10 @@ One-page Kemahasiswaan and Al-Islam dan Kemuhammadiyahan prototype for the 2026 
 Include organizations, UKM, achievements, student services, religious activities, kajian, syiar, and Muhammadiyah values in one page. Responsive desktop/mobile. Keyboard accessible. The current deliverable is a locally reviewable prototype. Submission preparation/publication is a later stage. Deadline from supplied brief: 30 September 2026.
 
 ## Evidence on Hand
-docs/brief lomba web.pdf and docs/strategi-lomba-landing-page-sibermu.md contain the researched brief and source URLs. Confirmed archival achievement: Nada Pratiwi and Rahmat Simbolon, second place MIDBRAIN 2023, published 5 January 2024. Confirmed KIP help is on the official admissions page. No approved official logo package, photographs, current organization directory, or AIK schedule has been supplied. User will confirm these later. Do not invent these facts. Generated imagery is labelled illustrative. Organization and activity sample content must be explicitly labelled as prototype content.
+docs/brief lomba web.pdf and docs/strategi-lomba-landing-page-sibermu.md contain the researched brief and source URLs. Confirmed archival achievement: Nada Pratiwi and Rahmat Simbolon, second place MIDBRAIN 2023, published 5 January 2024. Confirmed KIP help is on the official admissions page. The header logo is sourced from the official university website; no full brand package, photographs, current organization directory, or AIK schedule has been supplied. User will confirm these later. Do not invent these facts. Generated imagery is labelled illustrative. Organization and activity sample content must be explicitly labelled as prototype content.
 
 ## Product Principles
+- All female figures in future generated imagery must wear hijab, including background figures. This is the user's explicit preference from 25 September 2026.
 - Combine useful student tasks with substantive AIK content.
 - Make destinations and activity status clear.
 - Label missing evidence; never manufacture institutional claims.

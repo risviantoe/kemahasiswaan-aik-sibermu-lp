@@ -5,7 +5,7 @@ const links = [['AIK', '#aik'], ['Komunitas', '#komunitas'], ['Prestasi', '#pres
 <a class="skip-link" href="#main">Lewati ke konten</a>
 <header class="site-header">
   <div class="container header-inner">
-    <a class="brand" href="#beranda" aria-label="SiberMu — kembali ke beranda"><svg class="brand-mark" width="40" height="40" viewBox="0 0 40 40" fill="none" aria-hidden="true"><path d="M20 3v34M3 20h34M8 8l24 24M8 32 32 8" stroke="currentColor" stroke-width="4"/><circle cx="20" cy="20" r="6" fill="var(--paper)"/></svg><span>Siber<span class="brand-mu">Mu</span><small>KEMAHASISWAAN & AIK</small></span></a>
+    <a class="brand" href="#beranda" aria-label="SiberMu — kembali ke beranda"><img src="/images/sibermu-logo-official.png" width="768" height="182" alt="" /><small>KEMAHASISWAAN & AIK</small></a>
     <button class="menu-toggle" type="button" aria-label="Buka navigasi" aria-expanded="false" aria-controls="main-nav"><Icon name="menu" /></button>
     <nav id="main-nav" aria-label="Navigasi utama">
       {links.map(([label, href]) => <a href={href}>{label}</a>)}
@@ -26,4 +26,79 @@ const links = [['AIK', '#aik'], ['Komunitas', '#komunitas'], ['Prestasi', '#pres
   nav?.querySelectorAll('a').forEach(link => link.addEventListener('click', closeMenu));
   document.addEventListener('keydown', event => { if (event.key === 'Escape' && toggle?.getAttribute('aria-expanded') === 'true') { closeMenu(); toggle.focus(); } });
   window.matchMedia('(min-width: 901px)').addEventListener('change', closeMenu);
+
+  const header = document.querySelector<HTMLElement>('.site-header');
+  const sectionLinks = Array.from(nav?.querySelectorAll<HTMLAnchorElement>('a[href^="#"]') ?? []);
+  const sections = sectionLinks.flatMap(link => {
+    const section = document.getElementById(link.hash.slice(1));
+    return section ? [{ link, section }] : [];
+  });
+  let activeId = '';
+  let frame = 0;
+  let navigating = false;
+  let settleTimer: ReturnType<typeof setTimeout>;
+
+  function setActiveSection(id: string) {
+    if (id === activeId) return;
+    activeId = id;
+    for (const { link, section } of sections) {
+      if (section.id === id) link.setAttribute('aria-current', 'location');
+      else link.removeAttribute('aria-current');
+    }
+  }
+
+  function updateActiveSection() {
+    frame = 0;
+    if (navigating) return;
+    // Activate just below the sticky header, including native anchor offsets.
+    const readingLine = (header?.getBoundingClientRect().bottom ?? 0) + 32;
+    let id = '';
+    for (const { section } of sections) {
+      if (section.getBoundingClientRect().top <= readingLine) id = section.id;
+    }
+    // The final section may be too short to reach the reading line.
+    if (window.scrollY > 0 && window.innerHeight + window.scrollY >= document.documentElement.scrollHeight - 2) {
+      id = sections.at(-1)?.section.id ?? id;
+    }
+    setActiveSection(id);
+  }
+
+  function queueUpdate() {
+    if (!frame) frame = requestAnimationFrame(updateActiveSection);
+  }
+
+  function finishNavigation() {
+    clearTimeout(settleTimer);
+    navigating = false;
+    queueUpdate();
+  }
+
+  function waitForScrollToSettle() {
+    clearTimeout(settleTimer);
+    settleTimer = setTimeout(finishNavigation, 180);
+  }
+
+  for (const { link, section } of sections) {
+    link.addEventListener('click', event => {
+      if (event.defaultPrevented || event.button !== 0 || event.metaKey || event.ctrlKey || event.shiftKey || event.altKey) return;
+      setActiveSection(section.id);
+      navigating = true;
+      waitForScrollToSettle();
+    });
+  }
+  window.addEventListener('scroll', () => {
+    if (navigating) waitForScrollToSettle();
+    else queueUpdate();
+  }, { passive: true });
+  window.addEventListener('wheel', finishNavigation, { passive: true });
+  window.addEventListener('touchstart', finishNavigation, { passive: true });
+  window.addEventListener('resize', queueUpdate);
+  window.addEventListener('pageshow', finishNavigation);
+  window.addEventListener('hashchange', queueUpdate);
+  // Disclosures, images and fonts can shift section boundaries without scrolling.
+  const layoutObserver = new ResizeObserver(queueUpdate);
+  layoutObserver.observe(document.body);
+  if (header) layoutObserver.observe(header);
+  document.fonts.ready.then(queueUpdate);
+  queueUpdate();
 </script>
