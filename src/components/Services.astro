@@ -1,7 +1,7 @@
 ---
 import Icon from './Icon.astro';
 import { achievements } from '../data/achievements';
-import { faqs, sources, socialLinks, universityContact } from '../data/content';
+import { activities, faqs, sources, socialLinks, universityContact } from '../data/content';
 ---
 <section class="services-section" id="layanan" aria-labelledby="services-title">
   <div class="container">
@@ -32,8 +32,11 @@ import { faqs, sources, socialLinks, universityContact } from '../data/content';
 <footer class="site-footer"><div class="container">
   <div class="footer-top">
     <div class="footer-identity">
-      <a class="footer-brand" href="#beranda">Ruang Tumbuh<span>SiberMu</span></a>
-      <p class="footer-brand-copy">Kemahasiswaan & Al-Islam dan Kemuhammadiyahan.<br />Universitas Siber Muhammadiyah.</p>
+      <a class="brand brand--footer" href="#beranda" aria-label="Kemahasiswaan & AIK Universitas Siber Muhammadiyah, kembali ke beranda">
+        <span class="brand-mark" aria-hidden="true"><img src="/images/sibermu-logo-official.png" width="768" height="182" alt="" loading="lazy" /></span>
+        <span class="brand-copy"><strong>Kemahasiswaan & AIK</strong><small>Universitas Siber Muhammadiyah</small></span>
+      </a>
+      <p class="footer-brand-copy">Ruang Tumbuh SiberMu.<br />Terhubung. Bertumbuh. Berkontribusi.</p>
       <nav class="footer-social" aria-label="Media sosial SiberMu">
         {socialLinks.map(social => <a href={social.href} target="_blank" rel="noopener noreferrer" aria-label={`${social.name} SiberMu (tab baru)`} title={social.name}><Icon name={social.icon} size={22}/></a>)}
       </nav>
@@ -50,6 +53,25 @@ import { faqs, sources, socialLinks, universityContact } from '../data/content';
     </section>
     <a href="#beranda" class="back-top" aria-label="Kembali ke atas"><Icon name="arrow" size={24}/></a>
   </div>
-  <details class="credits" id="kredit"><summary>Sumber konten & kredit aset <Icon name="plus" size={17}/></summary><div><p>Konsep landing page untuk kebutuhan lomba 2026. Halaman ini belum menjadi layanan resmi Universitas Siber Muhammadiyah.</p><ul><li>Organisasi dan UKM: <a href={sources.spmi} target="_blank" rel="noopener noreferrer">Direktori SPMI SiberMu</a>, <a href={sources.studentReport} target="_blank" rel="noopener noreferrer">Laporan Kemahasiswaan 2023</a>, dan <a href={sources.organization} target="_blank" rel="noopener noreferrer">Struktur FATIKES</a>.</li><li>Prestasi dan dokumentasi: {achievements.map((item, index) => <Fragment>{index > 0 && "; "}<a href={item.source} target="_blank" rel="noopener noreferrer">{item.shortNames} ({item.year})</a></Fragment>)}. Bersumber dari Instagram @sibermu dan berita resmi kampus.</li><li>Program AIK: <a href={sources.rectorReport} target="_blank" rel="noopener noreferrer">Laporan Rektor 2024, halaman 9–10</a>.</li><li>Layanan: <a href={sources.academicHelp} target="_blank" rel="noopener noreferrer">artikel bantuan akademik</a> dan <a href={sources.admissions} target="_blank" rel="noopener noreferrer">Laman Admisi SiberMu</a>.</li><li>Nilai AIK: <a href={sources.values} target="_blank" rel="noopener noreferrer">Risalah Islam Berkemajuan — Khazanah Muhammadiyah</a>.</li><li>Ilustrasi hero, kolaborasi, bagian AIK, dan penutup dibuat dengan OpenAI Imagegen. Seluruh adegan serta bangunan bersifat fiktif, bukan dokumentasi mahasiswa atau fasilitas SiberMu.</li><li>Media sosial: <a href={sources.socialDirectory} target="_blank" rel="noopener noreferrer">direktori SiberMu</a>. Email dan alamat: <a href={sources.profile} target="_blank" rel="noopener noreferrer">profil resmi kampus</a>. Nomor WhatsApp mengacu pada brief lomba.</li><li>Logo header: <a href={sources.logo} target="_blank" rel="noopener noreferrer">situs resmi SiberMu</a>.</li><li>Huruf: Source Serif 4, Manrope, dan Public Sans, SIL Open Font License 1.1, disediakan melalui Fontsource. Ikon dan favicon geometris dibuat dalam SVG untuk konsep ini; bukan logo resmi universitas.</li><li>Label tahun menunjukkan dokumentasi historis, bukan status aktif, jadwal, atau pendaftaran 2026.</li></ul></div></details>
+  <details class="credits" id="kredit">
+    <summary>Sumber konten & kredit aset <Icon name="plus" size={17}/></summary>
+    <div>
+      <p>Konsep landing page untuk kebutuhan lomba 2026. Halaman ini belum menjadi layanan resmi Universitas Siber Muhammadiyah.</p>
+      <ul>
+        <li>Organisasi dan UKM: <a href={sources.spmi} target="_blank" rel="noopener noreferrer">Direktori SPMI SiberMu</a>, <a href={sources.studentReport} target="_blank" rel="noopener noreferrer">Laporan Kemahasiswaan 2023</a>, dan <a href={sources.organization} target="_blank" rel="noopener noreferrer">Struktur FATIKES</a>.</li>
+        <li>Prestasi dan dokumentasi: {achievements.map((item, index) => <Fragment>{index > 0 && "; "}<a href={item.source} target="_blank" rel="noopener noreferrer">{item.shortNames} ({item.year})</a></Fragment>)}. Bersumber dari Instagram @sibermu dan berita resmi kampus.</li>
+        <li>Kegiatan kemahasiswaan: {activities.filter(item => item.category === 'mahasiswa').map((item, index) => <Fragment>{index > 0 && "; "}<a href={item.source} target="_blank" rel="noopener noreferrer">{item.title} ({item.timing})</a></Fragment>)}. Tanggal kegiatan mengikuti isi berita dan dapat berbeda dari tanggal terbit artikel.</li>
+        <li>Program AIK: <a href={sources.rectorReport} target="_blank" rel="noopener noreferrer">Laporan Rektor 2024, halaman 9–10</a>. Nilai AIK: <a href={sources.values} target="_blank" rel="noopener noreferrer">Risalah Islam Berkemajuan, Khazanah Muhammadiyah</a>.</li>
+        <li>Layanan: <a href={sources.academicHelp} target="_blank" rel="noopener noreferrer">artikel bantuan akademik</a>, <a href={sources.studentPortal} target="_blank" rel="noopener noreferrer">Portal Mahasiswa</a>, dan <a href={sources.admissions} target="_blank" rel="noopener noreferrer">laman Admisi SiberMu</a>.</li>
+        <li>Media sosial: <a href={sources.socialDirectory} target="_blank" rel="noopener noreferrer">direktori SiberMu</a>. Email dan alamat: <a href={sources.profile} target="_blank" rel="noopener noreferrer">profil resmi kampus</a>. Nomor WhatsApp mengacu pada brief lomba.</li>
+        <li>Lambang header dan footer diambil dari <a href={sources.logo} target="_blank" rel="noopener noreferrer">logo pada situs resmi SiberMu</a>. Bagian lambang dipadukan dengan teks identitas halaman; pada footer lambang ditampilkan dalam warna putih.</li>
+        <li>Ilustrasi hero, komunitas, AIK, dan penutup dibuat dengan OpenAI Imagegen. Tokoh dan bangunannya bersifat fiktif. Poster serta sertifikat pada bagian prestasi merupakan dokumentasi dari sumber kampus yang ditautkan di atas.</li>
+        <li>Font disediakan melalui Fontsource dengan SIL Open Font License 1.1: <a href="/licenses/Source-Serif-4-OFL.txt" target="_blank" rel="noopener noreferrer">Source Serif 4</a>, <a href="/licenses/Manrope-OFL.txt" target="_blank" rel="noopener noreferrer">Manrope</a>, dan <a href="/licenses/Public-Sans-OFL.txt" target="_blank" rel="noopener noreferrer">Public Sans</a>.</li>
+        <li>Ikon pengguna, buku, dan hati diadaptasi dari <a href="https://github.com/feathericons/feather" target="_blank" rel="noopener noreferrer">Feather Icons oleh Cole Bemis</a> dengan <a href="/licenses/Feather-MIT.txt" target="_blank" rel="noopener noreferrer">lisensi MIT</a>. Ikon lainnya ditulis sebagai SVG inline.</li>
+        <li>Simbol Instagram, TikTok, YouTube, dan Facebook digunakan untuk mengenali tautan ke masing-masing platform. Favicon geometris dibuat untuk konsep halaman ini dan bukan logo resmi universitas.</li>
+        <li>Tanggal dan tahun menunjukkan waktu kegiatan, capaian, publikasi, atau laporan sesuai keterangannya. Dokumentasi tersebut tidak menyatakan bahwa pendaftaran atau rekrutmen sedang dibuka.</li>
+      </ul>
+    </div>
+  </details>
   <div class="footer-bottom"><span>Konsep landing page · SiberMu 2026</span><span>Dibuat untuk ruang tumbuh yang lebih dekat.</span></div>
 </div></footer>
