@@ -1,0 +1,58 @@
+---
+import Icon from './Icon.astro';
+import { achievements } from '../data/achievements';
+---
+<section class="achievement-section" id="prestasi" aria-labelledby="achievement-title">
+  <div class="container" data-achievement-showcase>
+    <header class="achievement-heading">
+      <h2 id="achievement-title">Prestasi yang menginspirasi.</h2>
+      <p>Lima cerita mahasiswa SiberMu berkarya di tingkat nasional dan internasional.</p>
+    </header>
+    <div class="achievement-showcase">
+      <div class="achievement-stage" data-achievement-stage>
+        <div class="achievement-panels">
+          {achievements.map(item => (
+            <article class="achievement-panel" id={`prestasi-${item.id}`} data-achievement-panel aria-labelledby={`award-${item.id}`} tabindex="-1">
+              <figure class="achievement-media">
+                <a href={item.source} target="_blank" rel="noopener noreferrer" aria-label={`Lihat dokumentasi ${item.students}`}>
+                  <img src={item.image} width={item.id === 'midbrain' ? 1140 : 800} height={item.id === 'midbrain' ? 500 : 1000} loading="lazy" decoding="async" alt={item.imageAlt} draggable="false" />
+                </a>
+                <figcaption>{item.imageCredit}</figcaption>
+              </figure>
+              <div class="achievement-story">
+                <h3 id={`award-${item.id}`}>{item.title}</h3>
+                <p class="achievement-meta">{item.level}<span aria-hidden="true"> · </span>{item.year}</p>
+                <p class="achievement-names">{item.students}</p>
+                <p class="achievement-program">{item.program}</p>
+                <p class="achievement-competition">{item.competition}</p>
+                <p class="achievement-description">{item.description}</p>
+                <a class="text-link" href={item.source} target="_blank" rel="noopener noreferrer">{item.sourceLabel}<Icon name="diagonal" size={17}/></a>
+                <p class="achievement-publication">{item.publication}</p>
+              </div>
+            </article>
+          ))}
+        </div>
+        <div class="achievement-controls" data-achievement-controls hidden>
+          <span class="achievement-counter" data-achievement-counter aria-hidden="true">1 dari {achievements.length}</span>
+          <div class="achievement-arrows">
+            <button type="button" data-achievement-previous aria-label="Prestasi sebelumnya"><Icon class="achievement-arrow-back" size={20}/></button>
+            <button type="button" data-achievement-next aria-label="Prestasi berikutnya"><Icon size={20}/></button>
+          </div>
+        </div>
+      </div>
+      <div class="achievement-choices" data-achievement-choices role="group" aria-label="Pilih cerita prestasi" hidden>
+        {achievements.map((item, index) => (
+          <button class="achievement-choice" type="button" data-achievement-choice aria-controls={`prestasi-${item.id}`} aria-pressed={index === 0 ? 'true' : 'false'}>
+            <span class="achievement-choice-copy"><strong>{item.shortTitle}</strong><span>{item.shortNames}</span><small>{item.level} · {item.year}</small></span>
+            <Icon size={18}/>
+          </button>
+        ))}
+      </div>
+    </div>
+    <p class="achievement-sr-only" data-achievement-status role="status" aria-live="polite" aria-atomic="true"></p>
+  </div>
+</section>
+<script>
+  import { initAchievementShowcase } from '../scripts/achievement-showcase';
+  document.querySelectorAll<HTMLElement>('[data-achievement-showcase]').forEach(initAchievementShowcase);
+</script>

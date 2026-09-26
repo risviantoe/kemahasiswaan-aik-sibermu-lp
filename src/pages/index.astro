@@ -2,7 +2,9 @@
 import Layout from '../layouts/Layout.astro';
 import Header from '../components/Header.astro';
 import Icon from '../components/Icon.astro';
+import Journey from '../components/Journey.astro';
 import StudentLife from '../components/StudentLife.astro';
+import Achievements from '../components/Achievements.astro';
 import Aik from '../components/Aik.astro';
 import Activities from '../components/Activities.astro';
 import Services from '../components/Services.astro';
@@ -10,26 +12,39 @@ import Services from '../components/Services.astro';
 <Layout>
   <Header />
   <main id="main">
-    <section class="hero container" id="beranda" aria-labelledby="hero-title">
-      <div class="hero-copy">
-        <h1 id="hero-title">Terhubung.<br />Bertumbuh.<br /><span>Berkontribusi.</span></h1>
-        <p class="hero-description">Ruang untuk menemukan teman seperjalanan, mengembangkan potensi, dan menghidupkan nilai Islam. Bersama SiberMu, mulai langkah bermaknamu.</p>
-        <div class="hero-actions"><a class="button primary" href="#komunitas">Temukan ruangmu <Icon name="diagonal" size={19} /></a><a class="text-link" href="#aik">Kenali AIK <Icon size={19} /></a></div>
-        <p class="hero-caption">Kemahasiswaan & Al-Islam dan Kemuhammadiyahan<br /><strong>Universitas Siber Muhammadiyah</strong></p>
+    <section class="hero-section campaign-hero" id="beranda" aria-labelledby="hero-title">
+      <div class="hero container">
+        <div class="hero-copy">
+          <p class="hero-eyebrow">Kemahasiswaan & AIK · SiberMu</p>
+          <h1 id="hero-title">
+            <span class="hero-message">Belajar dari <span class="hero-phrase">mana saja.</span></span>
+            <span class="hero-message hero-message-accent">Tumbuh bersama <span class="hero-phrase">siapa saja.</span></span>
+          </h1>
+          <p class="hero-description">Temukan komunitas, ruang berkarya, dan layanan mahasiswa. Kenali Al-Islam dan Kemuhammadiyahan sebagai landasan untuk bertumbuh dan memberi manfaat.</p>
+          <div class="hero-actions">
+            <a class="button primary" href="#komunitas">Jelajahi komunitas <Icon name="diagonal" size={19} /></a>
+            <a class="text-link" href="#aik">Kenali AIK <Icon size={19} /></a>
+          </div>
+          <p class="hero-caption">Universitas Siber Muhammadiyah</p>
+        </div>
+        <figure class="campaign-visual">
+          <div class="campaign-scene">
+            <img src="/images/hero-campus-v4.webp" srcset="/images/hero-campus-v4-small.webp 1000w, /images/hero-campus-v4.webp 1774w" sizes="(max-width: 640px) 640px, (max-width: 900px) 112vw, 100vw" alt="Ilustrasi AI tiga mahasiswa dengan laptop dan buku di depan bangunan kampus imajinatif" width="1774" height="887" fetchpriority="high" />
+          </div>
+          <figcaption>Ilustrasi AI · Tokoh & bangunan fiktif</figcaption>
+        </figure>
       </div>
-      <figure class="hero-visual">
-        <div class="hero-photo"><img src="/images/kolaborasi.webp" alt="Ilustrasi AI tiga mahasiswa berdiskusi bersama di depan laptop" width="1024" height="1280" fetchpriority="high" /></div>
-        <div class="photo-note"><span class="little-orbit" aria-hidden="true"></span><p>Belajar dari mana saja.<br /><strong>Tumbuh bersama siapa saja.</strong></p></div>
-        <figcaption>Ilustrasi kolaborasi · Dibuat dengan AI</figcaption>
-      </figure>
+      <div class="container hero-baseline"><span>Ruang Tumbuh SiberMu</span><span>Terhubung. Bertumbuh. Berkontribusi.</span></div>
     </section>
     <section class="quick-section" aria-label="Mulai dari kebutuhanmu"><div class="container quick-grid">
       <a href="#komunitas"><Icon name="people" size={26} /><span>Temukan komunitas<small>Organisasi & ruang minatmu</small></span><Icon name="diagonal" size={20} /></a>
       <a href="#aik"><Icon name="book" size={26} /><span>Belajar & mengamalkan<small>Kenali kegiatan dan nilai AIK</small></span><Icon name="diagonal" size={20} /></a>
       <a href="#layanan"><Icon name="heart" size={26} /><span>Dapatkan dukungan<small>Akses layanan mahasiswa</small></span><Icon name="diagonal" size={20} /></a>
     </div></section>
-    <StudentLife />
+    <Journey />
     <Aik />
+    <StudentLife />
+    <Achievements />
     <Activities />
     <Services />
   </main>

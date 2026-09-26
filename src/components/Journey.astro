@@ -1,0 +1,43 @@
+---
+import Icon from './Icon.astro';
+const benefits = [
+  { title: 'Belajar', description: 'Memperdalam ilmu, memperluas wawasan.' },
+  { title: 'Berkarya', description: 'Mengolah gagasan menjadi karya yang berarti.' },
+  { title: 'Berorganisasi', description: 'Membangun jejaring dan belajar memimpin.' },
+  { title: 'Berkontribusi', description: 'Membawa pengetahuan untuk memberi manfaat.' },
+];
+const steps = [
+  { title: 'Temukan layanan', description: 'Akses bantuan sesuai kebutuhanmu.', href: '#layanan' },
+  { title: 'Kenali komunitas', description: 'Cari ruang untuk mengembangkan minat.', href: '#komunitas' },
+  { title: 'Lihat prestasi', description: 'Temukan inspirasi dari karya mahasiswa.', href: '#prestasi' },
+  { title: 'Jelajahi kegiatan', description: 'Kenali kajian dan pengabdian kampus.', href: '#kegiatan' },
+];
+---
+<section class="student-intro container" aria-labelledby="student-intro-title">
+  <div class="student-intro-copy">
+    <h2 id="student-intro-title">Setiap mahasiswa punya ruang untuk tumbuh.</h2>
+    <p>Di SiberMu, belajar juga berarti mengembangkan minat, mengenal teman seperjalanan, dan menemukan cara untuk berkontribusi.</p>
+  </div>
+  <dl class="student-benefits">
+    {benefits.map(benefit => <div><dt>{benefit.title}</dt><dd>{benefit.description}</dd></div>)}
+  </dl>
+</section>
+<section class="journey-section" id="perjalanan" aria-labelledby="journey-title">
+  <div class="container">
+    <div class="journey-heading">
+      <h2 id="journey-title">Mulai perjalananmu.</h2>
+      <p>Empat langkah untuk mengenal kampus dan mengambil peran.</p>
+    </div>
+    <ol class="journey-steps">
+      {steps.map((step, index) => (
+        <li>
+          <a class="journey-step-link" href={step.href}>
+          <div class="journey-step-line"><span class="journey-number" aria-hidden="true">{String(index + 1).padStart(2, '0')}</span>{index < steps.length - 1 && <span class="journey-connector" aria-hidden="true"><Icon size={16}/></span>}</div>
+          <h3>{step.title}</h3>
+          <p>{step.description}</p>
+          </a>
+        </li>
+      ))}
+    </ol>
+  </div>
+</section>
