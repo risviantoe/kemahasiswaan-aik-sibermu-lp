@@ -1,6 +1,6 @@
 ---
 import Icon from './Icon.astro';
-import { communities, sources } from '../data/content';
+import { communities, communityInquiry } from '../data/content';
 ---
 <section class="container section community-section" id="komunitas" aria-labelledby="community-title">
   <div class="community-editorial">
@@ -27,26 +27,7 @@ import { communities, sources } from '../data/content';
         </details>
       ))}
       <p class="community-archive-note">Profil UKM merujuk laporan 2023. Status aktif, kontak pengurus, dan pendaftaran terbaru perlu dikonfirmasi ke kampus.</p>
+      <a class="text-link community-inquiry" href={communityInquiry} target="_blank" rel="noopener noreferrer">Tanyakan informasi UKM <Icon name="diagonal" size={16}/></a>
     </div>
-  </div>
-</section>
-<section class="achievement-section" id="prestasi" aria-labelledby="achievement-title">
-  <div class="container achievement-editorial">
-    <div class="achievement-intro">
-      <h2 id="achievement-title">Juara II esai<br />ilmiah nasional.</h2>
-      <p>MIDBRAIN 2023<br />Medical Scientific Competition and Award of UIN Malang.</p>
-      <a class="text-link" href={sources.achievement} target="_blank" rel="noopener noreferrer">Baca berita prestasi <Icon name="diagonal" size={18}/></a>
-    </div>
-    <article class="achievement-copy" aria-labelledby="achievement-students">
-      <h3 id="achievement-students">Nada Pratiwi &<br />Rahmat Simbolon</h3>
-      <p class="achievement-program">Mahasiswa S1 Administrasi Kesehatan</p>
-      <p>Keduanya meraih penghargaan dalam kompetisi esai ilmiah tingkat nasional yang diselenggarakan UIN Malang.</p>
-      <figure class="achievement-document">
-      <a href={sources.achievement} target="_blank" rel="noopener noreferrer" aria-label="Buka berita resmi prestasi MIDBRAIN 2023">
-        <img src="/images/midbrain-2023.png" width="1140" height="500" loading="lazy" decoding="async" alt="Dokumentasi pengumuman juara kedua esai ilmiah MIDBRAIN 2023 atas nama Nada Pratiwi, dari berita SiberMu" />
-      </a>
-        <figcaption><strong>Dokumentasi penghargaan</strong><span>Pengumuman pada berita resmi SiberMu.</span><span>Dipublikasikan 5 Januari 2024.</span></figcaption>
-      </figure>
-    </article>
   </div>
 </section>
