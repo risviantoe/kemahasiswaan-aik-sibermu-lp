@@ -7,10 +7,10 @@ const benefits = [
   { title: 'Berkontribusi', description: 'Membawa pengetahuan untuk memberi manfaat.' },
 ];
 const steps = [
-  { title: 'Kenali', description: 'Cari informasi dan layanan kampus.', href: '#layanan' },
-  { title: 'Terlibat', description: 'Temukan komunitas sesuai minatmu.', href: '#komunitas' },
-  { title: 'Berkarya', description: 'Belajar dari prestasi mahasiswa.', href: '#prestasi' },
-  { title: 'Berkontribusi', description: 'Kenali kegiatan AIK dan sosial.', href: '#kegiatan' },
+  { title: 'Temukan layanan', description: 'Akses bantuan sesuai kebutuhanmu.', href: '#layanan' },
+  { title: 'Kenali komunitas', description: 'Cari ruang untuk mengembangkan minat.', href: '#komunitas' },
+  { title: 'Lihat prestasi', description: 'Temukan inspirasi dari karya mahasiswa.', href: '#prestasi' },
+  { title: 'Jelajahi kegiatan', description: 'Kenali kajian dan pengabdian kampus.', href: '#kegiatan' },
 ];
 ---
 <section class="student-intro container" aria-labelledby="student-intro-title">
@@ -31,9 +31,11 @@ const steps = [
     <ol class="journey-steps">
       {steps.map((step, index) => (
         <li>
+          <a class="journey-step-link" href={step.href}>
           <div class="journey-step-line"><span class="journey-number" aria-hidden="true">{String(index + 1).padStart(2, '0')}</span>{index < steps.length - 1 && <span class="journey-connector" aria-hidden="true"><Icon size={16}/></span>}</div>
-          <h3><a href={step.href}>{step.title}</a></h3>
+          <h3>{step.title}</h3>
           <p>{step.description}</p>
+          </a>
         </li>
       ))}
     </ol>

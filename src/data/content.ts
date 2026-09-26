@@ -13,6 +13,8 @@ export const sources = {
   academicHelp: 'https://sibermu.ac.id/artikel/video-tutorial-krs/',
   studentPortal: 'https://student.sibermu.ac.id/',
   academicInfo: 'https://sibermu.ac.id/akademik/',
+  kknLaunch: 'https://sibermu.ac.id/artikel/launching-program-kkn-pjj-melalui-webinar-projek-berbasis-masyarakat-universitas-siber-muhammadiyah/',
+  healthCareerWebinar: 'https://sibermu.ac.id/pendidikan/persiapkan-lulusan-administrasi-kesehatan-di-era-transformasi-kesehatan-digital/',
 };
 
 // Akun ditautkan dari Linktree SiberMu; YouTube/TikTok juga tercantum di academicHelp.
@@ -33,20 +35,31 @@ export const universityContact = {
   maps: 'https://www.google.com/maps/search/?api=1&query=Universitas%20Siber%20Muhammadiyah%20Jalan%20HOS%20Cokroaminoto%2017%20Yogyakarta',
 };
 
-// Dokumentasi historis dari sumber resmi. Status dan tahun sengaja terlihat agar
-// arsip 2023/2024 tidak terbaca sebagai agenda atau pendaftaran aktif 2026.
+// Tautan untuk meminta arahan kampus, bukan kontak pengurus/rekrutmen UKM.
+export const communityInquiry = `${universityContact.whatsapp}?text=${encodeURIComponent('Assalamu’alaikum. Saya ingin mengetahui informasi UKM SiberMu dan cara bergabung. Mohon arahan ke bagian atau pengurus yang dapat saya hubungi. Terima kasih.')}`;
+
+// Tanggal kegiatan mengikuti isi berita, bukan tanggal terbitnya.
+// Program dalam laporan lama tetap diberi label tahun laporan, bukan tanggal acara.
 export const activities = [
   {
     category: 'mahasiswa',
-    label: 'Kemahasiswaan · UKM',
-    title: 'Bahasa Inggris & public speaking',
-    type: 'Pengembangan bahasa & public speaking',
-    icon: 'people',
-    status: 'Arsip resmi',
-    timing: 'Dokumentasi 2023',
-    description: 'Laporan Kemahasiswaan 2023 mencatat English Club sebagai wadah pengembangan bahasa Inggris, budaya internasional, debat, dan public speaking.',
-    source: sources.studentReport,
-    sourceLabel: 'Laporan Kemahasiswaan 2023',
+    label: 'Kemahasiswaan · Karier',
+    title: 'Siber Sehat Talks #7',
+    type: 'Kompetensi dan karier di bidang kesehatan digital',
+    timing: '11 Mei 2026',
+    description: 'Webinar nasional Prodi Administrasi Kesehatan bersama PIPAKI mempertemukan mahasiswa, dosen, dan praktisi untuk membahas kompetensi serta peluang karier di tengah transformasi sistem kesehatan. Tanggal kegiatan mengacu pada isi berita; artikel diterbitkan 17 Juli 2026.',
+    source: sources.healthCareerWebinar,
+    sourceLabel: 'Baca berita SiberMu',
+  },
+  {
+    category: 'mahasiswa',
+    label: 'Kemahasiswaan · Pengabdian',
+    title: 'Peluncuran KKN PJJ melalui webinar PBMU',
+    type: 'Belajar jarak jauh, berkontribusi di masyarakat',
+    timing: '21 Februari 2026',
+    description: 'Webinar peluncuran KKN PJJ diikuti mahasiswa, dosen, dan supervisor dari berbagai program studi. Program ini menghubungkan pembelajaran jarak jauh dengan proyek pengabdian berdasarkan kebutuhan masyarakat. Berita resminya juga memuat tautan rekaman webinar.',
+    source: sources.kknLaunch,
+    sourceLabel: 'Baca berita dan akses rekaman',
   },
   {
     category: 'aik',
@@ -132,10 +145,14 @@ export const communities = [
 export const faqs = [
   {
     question: 'Bagaimana mencari informasi bergabung dengan UKM?',
-    answer: 'Profil di halaman ini bersumber dari Laporan Kemahasiswaan 2023. Kontak pengurus dan rekrutmen terbaru belum tersedia pada sumber tersebut. Gunakan kanal bantuan resmi kampus di atas untuk meminta arahan ke bagian Kemahasiswaan.',
+    answer: 'Sampaikan UKM yang kamu minati melalui WhatsApp kampus dan minta arahan ke pengurusnya. Profil UKM di halaman ini mengacu pada laporan 2023, sehingga status aktif dan jadwal rekrutmen perlu ditanyakan kembali.',
+    href: communityInquiry,
+    linkLabel: 'Tanyakan informasi UKM',
   },
   {
     question: 'Apakah kegiatan yang ditampilkan sedang dibuka?',
-    answer: 'Daftar kegiatan merupakan dokumentasi 2023–2024, bukan pengumuman pendaftaran. Jadwal dan format terbaru perlu dikonfirmasi ke kampus. Tahun sumber dicantumkan pada setiap kegiatan.',
+    answer: 'Halaman ini memuat dokumentasi kegiatan yang sudah berlangsung dan program dari laporan kampus. Untuk mencari kegiatan yang bisa diikuti, periksa pengumuman terbaru di kanal resmi SiberMu beserta jadwal dan ketentuan pendaftarannya.',
+    href: sources.university,
+    linkLabel: 'Lihat pengumuman kampus',
   },
 ];

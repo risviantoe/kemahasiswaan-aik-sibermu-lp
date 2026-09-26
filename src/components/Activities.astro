@@ -5,7 +5,7 @@ import { activities } from '../data/content';
 <section class="container section activities-section" id="kegiatan" aria-labelledby="activities-title">
   <div class="activities-heading">
     <h2 id="activities-title">Kehidupan kampus,<br />dalam kegiatan.</h2>
-    <p>Pengembangan diri, kajian, dan kepedulian sosial dalam dokumentasi SiberMu. Arsip 2023–2024, bukan jadwal pendaftaran terbaru.</p>
+    <p>Dari persiapan karier hingga pengabdian dan kajian. Jelajahi dokumentasi kegiatan serta program kampus, lengkap dengan tanggal atau tahun sumbernya.</p>
   </div>
   <div class="activity-controls" role="group" aria-label="Filter kegiatan terdokumentasi">
     <button type="button" data-filter="all" aria-pressed="true">Semua kegiatan</button>
@@ -27,12 +27,14 @@ import { activities } from '../data/content';
   <noscript><p class="draft-note">Semua dokumentasi ditampilkan. Aktifkan JavaScript untuk memakai filter.</p></noscript>
 </section>
 <script>
-  const controls = document.querySelectorAll<HTMLButtonElement>('[data-filter]');
-  const items = document.querySelectorAll<HTMLElement>('[data-category]');
-  const count = document.querySelector('#activity-count');
-  controls.forEach(button => button.addEventListener('click', () => {
-    const category = button.dataset.filter;
-    controls.forEach(control => control.setAttribute('aria-pressed', String(control === button)));
+  const section = document.querySelector('#kegiatan');
+  const controls = section?.querySelectorAll<HTMLButtonElement>('[data-filter]') ?? [];
+  const items = section?.querySelectorAll<HTMLElement>('[data-category]') ?? [];
+  const count = section?.querySelector('#activity-count');
+
+  function selectCategory(category: string) {
+    if (!['all', 'mahasiswa', 'aik'].includes(category)) return;
+    controls.forEach(control => control.setAttribute('aria-pressed', String(control.dataset.filter === category)));
     let visible = 0;
     items.forEach(item => {
       const show = category === 'all' || item.dataset.category === category;
@@ -40,5 +42,16 @@ import { activities } from '../data/content';
       if (show) visible++;
     });
     if (count) count.textContent = `${visible} dokumentasi`;
-  }));
+  }
+
+  controls.forEach(button => button.addEventListener('click', () => selectCategory(button.dataset.filter ?? 'all')));
+
+  // Apply the filter before the native anchor scroll, after the list changes height.
+  // General activity links restore all entries after a visit through the AIK CTA.
+  document.querySelectorAll<HTMLAnchorElement>('a[href="#kegiatan"]').forEach(link => {
+    link.addEventListener('click', event => {
+      if (event.defaultPrevented || event.button !== 0 || event.metaKey || event.ctrlKey || event.shiftKey || event.altKey) return;
+      selectCategory(link.dataset.activityFilter ?? 'all');
+    });
+  });
 </script>
