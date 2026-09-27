@@ -1,44 +1,40 @@
 # Ruang Tumbuh SiberMu
 
-Prototipe landing page lomba Kemahasiswaan dan Al-Islam & Kemuhammadiyahan Universitas Siber Muhammadiyah. Konsep: **Terhubung. Bertumbuh. Berkontribusi.**
+Landing page Kemahasiswaan dan Al-Islam & Kemuhammadiyahan (AIK) Universitas Siber Muhammadiyah untuk lomba landing page 2026. Konsep **Ruang Tumbuh** menghubungkan kesempatan belajar, berkomunitas, berkarya, dan berkontribusi dalam satu halaman.
 
-Halaman dibangun dengan Astro, TypeScript, dan Tailwind CSS. Hasil build berupa situs statis; tidak membutuhkan basis data. Filter kegiatan dan menu ponsel memakai JavaScript kecil, sedangkan FAQ memakai elemen `details` bawaan browser.
+**Demo:** [kemahasiswaan-aik-sibermu-lp.vercel.app](https://kemahasiswaan-aik-sibermu-lp.vercel.app/)
 
-## Menjalankan
+Halaman ini memuat profil komunitas mahasiswa, lima cerita prestasi, pengenalan AIK, dokumentasi kegiatan, serta tautan layanan dan kontak kampus. Pengunjung dapat memilih cerita prestasi secara manual, memfilter dokumentasi kegiatan, dan membuka rincian melalui elemen `details`. Situs dibangun sebagai halaman statis tanpa basis data atau sistem pendaftaran.
 
-Gunakan Node.js **22.12 atau lebih baru** (pengujian menggunakan Node 24.19). Node 20 bawaan Laragon di komputer ini belum memenuhi kebutuhan Astro yang terpasang.
+## Menjalankan proyek
+
+Gunakan Node.js **22.12 atau lebih baru** dan npm.
 
 ```sh
 npm ci
 npm run dev
 ```
 
-Buka http://127.0.0.1:4321. Untuk pemeriksaan tipe dan build produksi:
+Buka `http://127.0.0.1:4321/`. Untuk pemeriksaan tipe dan build produksi:
 
 ```sh
 npm run build
 npm run preview
 ```
 
-Hasil siap hosting statis berada di `dist/`. Perintah npm memanggil entrypoint Astro secara langsung untuk menghindari masalah shim Windows pada nama folder yang mengandung `&`.
+Hasil build berada di `dist/`. Proyek menggunakan Astro, TypeScript, Tailwind CSS, serta font lokal dari Fontsource.
 
-## Mengubah konten
+## Memperbarui konten
 
-- `src/data/content.ts`: tautan sumber, komunitas, contoh kegiatan, dan FAQ.
-- `src/components/StudentLife.astro`: bagian komunitas dan arsip prestasi yang bersumber.
-- `src/components/Aik.astro`: pengenalan dan nilai AIK.
-- `src/components/Services.astro`: layanan, FAQ, dan kredit.
-- `src/pages/index.astro`: susunan halaman dan hero.
-- `src/styles/global.css`: sistem visual dan aturan responsif.
+- `src/data/content.ts` menyimpan tautan sumber, komunitas, kegiatan, FAQ, media sosial, dan kontak.
+- `src/data/achievements.ts` menyimpan lima cerita prestasi dan tautan dokumentasinya.
+- `src/components/` berisi bagian halaman, termasuk komunitas, prestasi, AIK, kegiatan, dan layanan.
+- `src/pages/index.astro` menyusun halaman; `src/styles/` menyimpan aturan visual dan responsif.
 
-## Status konten
+## Sumber dan batasan
 
-Ini pratinjau konsep, belum layanan resmi kampus. Organisasi, UKM, kegiatan, format partisipasi, jadwal, dan kontak pengelola masih menunggu konfirmasi. Contoh ditandai di halaman. Prestasi MIDBRAIN 2023 ditautkan ke berita resmi SiberMu. Nilai AIK diringkas dari Risalah Islam Berkemajuan.
+Prestasi ditautkan ke unggahan Instagram @sibermu atau berita resmi kampus. Profil UKM mengacu pada Laporan Kemahasiswaan 2023; status aktif, pengurus, dan pendaftaran terbaru perlu dikonfirmasi ke kampus. Bagian kegiatan memuat dokumentasi atau program yang telah tercatat, bukan pengumuman bahwa pendaftaran sedang dibuka. Rujukan setiap cerita tersedia pada halaman, bersama daftar sumber dan kredit aset di footer.
 
-Ilustrasi kolaborasi dibuat dengan AI dan diberi label; tokohnya fiktif. Tanda grafis prototipe bukan logo resmi universitas. Ganti dengan aset resmi yang sudah diizinkan sebelum pengumpulan. Lisensi font yang disertakan berada di `public/licenses/`.
+Lambang SiberMu pada header dan footer bersumber dari situs resmi universitas dan dipadukan dengan teks identitas halaman. Ilustrasi hero, AIK, komunitas, dan penutup dibuat dengan AI; tokoh serta bangunannya fiktif dan diberi label. Poster prestasi berasal dari dokumentasi kampus yang ditautkan. Lisensi font tersedia di `public/licenses/`.
 
-Metadata masih `noindex, nofollow` untuk fase pratinjau. Belum ada integrasi pendaftaran atau pengiriman formulir. Checklist persiapan konten tersedia di `docs/checklist-konten.md`; folder `docs/` saat ini dikecualikan oleh aturan Git proyek.
-
-## Pemeriksaan
-
-Build Astro dan pemeriksaan tipe dijalankan. Interaksi menu, Escape, filter tiga kategori, FAQ, tautan fragmen, serta tata letak desktop/ponsel diperiksa di browser. Catatan cakupan dan keterbatasan berada di `docs/qa-prototype.md`. Pengujian tersebut belum merupakan sertifikasi aksesibilitas atau audit performa produksi.
+Proyek lomba ini bukan portal layanan resmi Universitas Siber Muhammadiyah. Tautan layanan mengarah ke kanal kampus; situs ini tidak menerima formulir atau data mahasiswa.
