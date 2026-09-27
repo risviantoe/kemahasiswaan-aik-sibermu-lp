@@ -30,7 +30,6 @@ Hasil siap hosting statis berada di `dist/`. Perintah npm memanggil entrypoint A
 - `src/components/Services.astro`: layanan, FAQ, dan kredit.
 - `src/pages/index.astro`: susunan halaman dan hero.
 - `src/styles/global.css`: sistem visual dan aturan responsif.
-- `PRODUCT.md` dan `DESIGN.md`: konteks produk dan panduan desain.
 
 ## Status konten
 

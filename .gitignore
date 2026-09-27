@@ -6,10 +6,12 @@
 docs/
 node_modules/
 dist/
+output/
+PRODUCT.md
+DESIGN.md
 .astro/
 .sites-runtime/
 tmp/
 .env
 .env.*
 !.env.example
-
