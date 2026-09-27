@@ -19,8 +19,6 @@
 .campaign-visual figcaption { position:absolute; bottom:12px; right:max(32px,calc((100% - 1232px) / 2)); padding:3px 8px; text-align:right; color:#425d79; background:var(--hero-surface); font-size:.75rem; }
 .campaign-hero .hero-baseline { border-color:#c4d8e9; color:#53677c; }
 .campaign-hero .hero-baseline>span:first-child { color:var(--navy); font-weight:600; }
-@keyframes campaign-arrive { from { opacity:.92; transform:translateY(10px); } to { opacity:1; transform:translateY(0); } }
-@media (prefers-reduced-motion:no-preference) { .campaign-scene img { animation:campaign-arrive 600ms cubic-bezier(.16,1,.3,1); } }
 
 
 

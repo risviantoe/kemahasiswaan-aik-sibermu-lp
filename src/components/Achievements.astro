@@ -15,7 +15,7 @@ import { achievements } from '../data/achievements';
             <article class="achievement-panel" id={`prestasi-${item.id}`} data-achievement-panel aria-labelledby={`award-${item.id}`} tabindex="-1">
               <figure class="achievement-media">
                 <a href={item.source} target="_blank" rel="noopener noreferrer" aria-label={`Lihat dokumentasi ${item.students}`}>
-                  <img src={item.image} width={item.id === 'midbrain' ? 1140 : 800} height={item.id === 'midbrain' ? 500 : 1000} loading="lazy" decoding="async" alt={item.imageAlt} draggable="false" />
+                  <img src={item.image} srcset={`${item.imageSmall} ${item.id === 'midbrain' ? 800 : 640}w, ${item.image} ${item.id === 'midbrain' ? 1140 : 800}w`} sizes="(max-width: 640px) calc(100vw - 40px), (max-width: 900px) 320px, 358px" width={item.id === 'midbrain' ? 1140 : 800} height={item.id === 'midbrain' ? 500 : 1000} loading="lazy" decoding="async" alt={item.imageAlt} draggable="false" />
                 </a>
                 <figcaption>{item.imageCredit}</figcaption>
               </figure>
