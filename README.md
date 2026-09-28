@@ -22,14 +22,15 @@ npm run build
 npm run preview
 ```
 
-Hasil build berada di `dist/`. Proyek menggunakan Astro, TypeScript, Tailwind CSS, serta font lokal dari Fontsource.
+Hasil build berada di `dist/`. Proyek menggunakan Astro, TypeScript, Tailwind CSS 4, serta font lokal dari Fontsource. Tampilan komponen, layout responsif, dan state interaksi ditulis dengan utility Tailwind. CSS kustom digunakan untuk fondasi global dan gradasi berlapis pada foto.
 
 ## Memperbarui konten
 
 - `src/data/content.ts` menyimpan tautan sumber, komunitas, kegiatan, FAQ, media sosial, dan kontak.
 - `src/data/achievements.ts` menyimpan lima cerita prestasi dan tautan dokumentasinya.
 - `src/components/` berisi bagian halaman, termasuk komunitas, prestasi, AIK, kegiatan, dan layanan.
-- `src/pages/index.astro` menyusun halaman; `src/styles/` menyimpan aturan visual dan responsif.
+- `src/pages/index.astro` menyusun halaman; utility Tailwind berada langsung di halaman dan komponen Astro.
+- `src/styles/global.css` menyimpan token tema, varian breakpoint, fondasi aksesibilitas, dan gradasi foto. Varian `compact` (≤1100px), `tablet` (≤900px), `stack` (≤700px), dan `mobile` (≤640px) mempertahankan batas ukuran desain. Varian `hero-tablet` (641–900px) mengatur hero tablet, sedangkan `tall-desktop` membatasi sticky komunitas pada layar yang cukup tinggi.
 
 ## Sumber dan batasan
 

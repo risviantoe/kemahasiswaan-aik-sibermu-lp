@@ -13,28 +13,36 @@ const steps = [
   { title: 'Jelajahi kegiatan', description: 'Kenali kajian dan pengabdian kampus.', href: '#kegiatan' },
 ];
 ---
-<section class="student-intro container" aria-labelledby="student-intro-title">
-  <div class="student-intro-copy">
-    <h2 id="student-intro-title">Setiap mahasiswa punya ruang untuk tumbuh.</h2>
+<section class="
+  grid grid-cols-2 items-center gap-22.5 py-15 compact:gap-x-11 tablet:grid-cols-1
+  tablet:gap-7 tablet:py-11 container mx-auto w-[min(1232px,calc(100%-112px))]
+  compact:w-[calc(100%-64px)] mobile:w-[calc(100%-40px)]
+" aria-labelledby="student-intro-title">
+  <div class="[&>p]:mt-5.5 [&>p]:max-w-[48ch] [&>p]:text-[1rem] [&>p]:text-muted tablet:[&>p]:max-w-[62ch]">
+    <h2 id="student-intro-title" class="font-editorial font-medium leading-[1.12] tracking-[-.035em] text-balance text-[clamp(2.15rem,3.4vw,3.1rem)]">Setiap mahasiswa punya ruang untuk tumbuh.</h2>
     <p>Di SiberMu, belajar juga berarti mengembangkan minat, mengenal teman seperjalanan, dan menemukan cara untuk berkontribusi.</p>
   </div>
-  <dl class="student-benefits">
-    {benefits.map(benefit => <div><dt>{benefit.title}</dt><dd>{benefit.description}</dd></div>)}
+  <dl class="m-0 grid grid-cols-2 gap-x-8 gap-y-7 compact:gap-6 tablet:max-w-162.5 mobile:gap-x-4.5 mobile:gap-y-6">
+    {benefits.map(benefit => <div class="even:border-l even:border-line even:pl-7 compact:even:pl-5 mobile:even:pl-4"><dt class="font-editorial text-[1.75rem] leading-[1.2] text-navy mobile:text-[1.45rem]">{benefit.title}</dt><dd class="mt-2.5 max-w-[24ch] text-[.94rem] text-muted mobile:text-[.9375rem]">{benefit.description}</dd></div>)}
   </dl>
 </section>
-<section class="journey-section" id="perjalanan" aria-labelledby="journey-title">
-  <div class="container">
-    <div class="journey-heading">
-      <h2 id="journey-title">Mulai perjalananmu.</h2>
+<section class="bg-quiet pt-8.5 pb-9.5 mobile:pt-7.5 mobile:pb-8.5" id="perjalanan" aria-labelledby="journey-title">
+  <div class="container mx-auto w-[min(1232px,calc(100%-112px))] compact:w-[calc(100%-64px)] mobile:w-[calc(100%-40px)]">
+    <div class="block [&>p]:mt-3 [&>p]:max-w-[60ch] [&>p]:text-[.96rem] [&>p]:text-muted">
+      <h2 id="journey-title" class="font-editorial font-medium leading-[1.12] tracking-[-.035em] text-balance text-[clamp(1.8rem,2.5vw,2.2rem)]">Mulai perjalananmu.</h2>
       <p>Empat langkah untuk mengenal kampus dan mengambil peran.</p>
     </div>
-    <ol class="journey-steps">
+    <ol class="
+      mt-7 grid list-none grid-cols-4 gap-8 p-0 compact:gap-6 tablet:grid-cols-2
+      tablet:gap-x-9.5 tablet:gap-y-8 mobile:mt-6 mobile:gap-x-5 mobile:gap-y-6
+      tablet:[&>li:nth-child(2)_.journey-connector]:hidden
+    ">
       {steps.map((step, index) => (
         <li>
-          <a class="journey-step-link" href={step.href}>
-          <div class="journey-step-line"><span class="journey-number" aria-hidden="true">{String(index + 1).padStart(2, '0')}</span>{index < steps.length - 1 && <span class="journey-connector" aria-hidden="true"><Icon size={16}/></span>}</div>
-          <h3>{step.title}</h3>
-          <p>{step.description}</p>
+          <a class="group/step block h-full py-1.25" href={step.href}>
+          <div class="mb-3 flex items-center gap-4.5 mobile:mb-2.5 mobile:gap-3.5"><span class="font-editorial text-[1.9rem] leading-none text-navy mobile:text-[1.7rem]" aria-hidden="true">{String(index + 1).padStart(2, '0')}</span>{index < steps.length - 1 && <span class="journey-connector flex flex-1 items-center text-blue before:h-px before:flex-1 before:bg-blue before:content-[''] [&>svg]:-ml-2" aria-hidden="true"><Icon size={16}/></span>}</div>
+          <h3 class="font-sans text-[1.15rem] font-[650] group-hover/step:text-blue group-hover/step:underline group-hover/step:underline-offset-4 mobile:text-[1.08rem]">{step.title}</h3>
+          <p class="mt-1.5 max-w-[27ch] text-[1rem] leading-[1.55] text-muted tablet:max-w-[34ch] mobile:text-[.96rem]">{step.description}</p>
           </a>
         </li>
       ))}
