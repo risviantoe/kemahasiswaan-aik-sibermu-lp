@@ -34,7 +34,7 @@ Hasil build berada di `dist/`. Proyek menggunakan Astro, TypeScript, Tailwind CS
 
 ## Sumber dan batasan
 
-Prestasi ditautkan ke unggahan Instagram @sibermu atau berita resmi kampus. Profil UKM mengacu pada Laporan Kemahasiswaan 2023; status aktif, pengurus, dan pendaftaran terbaru perlu dikonfirmasi ke kampus. Bagian kegiatan memuat dokumentasi atau program yang telah tercatat, bukan pengumuman bahwa pendaftaran sedang dibuka. Rujukan setiap cerita tersedia pada halaman, bersama daftar sumber dan kredit aset di footer.
+Prestasi ditautkan ke unggahan Instagram @sibermu atau berita resmi kampus. Profil UKM mengacu pada Laporan Kemahasiswaan 2023 yang tercantum di direktori dokumen resmi SPMI SiberMu serta unggahan Instagram UKM Bisnis Digital dan akun resmi @sibermu pada 2024. Halaman tidak mengklaim kepengurusan atau pendaftaran UKM saat ini; pengunjung diarahkan ke kanal kampus untuk informasi terbaru. Bagian kegiatan memuat dokumentasi atau program yang telah tercatat, bukan pengumuman bahwa pendaftaran sedang dibuka. Rujukan setiap cerita tersedia pada halaman, bersama daftar sumber dan kredit aset di footer.
 
 Lambang SiberMu pada header dan footer bersumber dari situs resmi universitas dan dipadukan dengan teks identitas halaman. Ilustrasi hero, AIK, komunitas, dan penutup dibuat dengan AI; tokoh serta bangunannya fiktif dan diberi label. Poster prestasi berasal dari dokumentasi kampus yang ditautkan. Lisensi font tersedia di `public/licenses/`.
 
