@@ -29,8 +29,8 @@ export function initAchievementShowcase(root: HTMLElement) {
 
   function navigate(direction: -1 | 1) {
     select(active + direction);
-    // Match the stacked phone layout; desktop selection never moves the page.
-    if (!window.matchMedia('(max-width: 640px)').matches) return;
+    // On phone and tablet the directory is hidden; bring the new story into view.
+    if (!window.matchMedia('(max-width: 900px)').matches) return;
     const panel = panels[active];
     const panelTop = panel.getBoundingClientRect().top;
     const headerBottom = document.querySelector('.site-header')?.getBoundingClientRect().bottom ?? 0;
