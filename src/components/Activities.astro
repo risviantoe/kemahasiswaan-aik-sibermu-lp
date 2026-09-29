@@ -1,70 +1,130 @@
 ---
 import Icon from './Icon.astro';
 import { activities } from '../data/content';
+
+const filters = [
+  { category: 'all', label: 'Semua kegiatan' },
+  { category: 'mahasiswa', label: 'Kemahasiswaan' },
+  { category: 'aik', label: 'AIK' },
+] as const;
 ---
-<section class="
-  container mx-auto w-[min(1232px,calc(100%-112px))] compact:w-[calc(100%-64px)]
-  mobile:w-[calc(100%-40px)] grid grid-cols-[.72fr_1.28fr] items-start gap-x-18
-  py-18 compact:gap-x-11 tablet:grid-cols-1 tablet:gap-y-6.5 mobile:py-11
-" id="kegiatan" aria-labelledby="activities-title">
-  <div class="
-    col-start-1 row-start-1 row-end-3 pt-1.75 tablet:row-auto tablet:grid
+
+<section
+  class="page-container grid grid-cols-[.72fr_1.28fr] items-start gap-x-18 py-18 compact:gap-x-11 tablet:grid-cols-1 tablet:gap-y-6.5 mobile:py-11"
+  id="kegiatan"
+  aria-labelledby="activities-title"
+>
+  <div
+    class="col-start-1 row-start-1 row-end-3 pt-1.75 tablet:row-auto tablet:grid
     tablet:grid-cols-2 tablet:gap-8 stack:grid-cols-1 stack:gap-6.5 [&>p]:mt-5.5 [&>p]:max-w-[34ch]
-    [&>p]:text-[1rem] [&>p]:text-muted tablet:[&>p]:mt-0 tablet:[&>p]:max-w-none
-  ">
-    <h2 class="font-editorial font-medium leading-[1.12] tracking-[-.035em] text-balance text-[clamp(2rem,3vw,2.7rem)]" id="activities-title">Kehidupan kampus,<br />dalam kegiatan.</h2>
-    <p>Dari persiapan karier hingga pengabdian dan kajian. Jelajahi dokumentasi kegiatan serta program kampus, lengkap dengan tanggal atau tahun sumbernya.</p>
+    [&>p]:text-[1rem] [&>p]:text-muted tablet:[&>p]:mt-0 tablet:[&>p]:max-w-none"
+  >
+    <h2
+      class="font-editorial font-medium leading-[1.12] tracking-[-.035em] text-balance text-[clamp(2rem,3vw,2.7rem)]"
+      id="activities-title"
+    >
+      Kehidupan kampus,
+      <br />
+      dalam kegiatan.
+    </h2>
+    <p>
+      Dari persiapan karier hingga pengabdian dan kajian. Jelajahi dokumentasi
+      kegiatan serta program kampus, lengkap dengan tanggal atau tahun
+      sumbernya.
+    </p>
   </div>
-  <div class="col-start-2 mt-0 flex flex-wrap items-center gap-5 border-b border-line pb-2.5 tablet:col-start-1 mobile:gap-x-3.5 mobile:gap-y-2" role="group" aria-label="Filter kegiatan terdokumentasi">
-    <button class="
-      min-h-11 rounded-none border-0 border-b-2 border-transparent bg-transparent px-0 py-2.75 text-[1rem]
-      text-muted aria-pressed:border-navy aria-pressed:font-semibold aria-pressed:text-navy hover:border-blue
-      hover:text-blue aria-pressed:hover:border-blue aria-pressed:hover:text-blue mobile:text-[.875rem]
-    " type="button" data-filter="all" aria-pressed="true">Semua kegiatan</button>
-    <button class="
-      min-h-11 rounded-none border-0 border-b-2 border-transparent bg-transparent px-0 py-2.75 text-[1rem]
-      text-muted aria-pressed:border-navy aria-pressed:font-semibold aria-pressed:text-navy hover:border-blue
-      hover:text-blue aria-pressed:hover:border-blue aria-pressed:hover:text-blue mobile:text-[.875rem]
-    " type="button" data-filter="mahasiswa" aria-pressed="false">Kemahasiswaan</button>
-    <button class="
-      min-h-11 rounded-none border-0 border-b-2 border-transparent bg-transparent px-0 py-2.75 text-[1rem]
-      text-muted aria-pressed:border-navy aria-pressed:font-semibold aria-pressed:text-navy hover:border-blue
-      hover:text-blue aria-pressed:hover:border-blue aria-pressed:hover:text-blue mobile:text-[.875rem]
-    " type="button" data-filter="aik" aria-pressed="false">AIK</button>
-    <span id="activity-count" class="m-0 basis-full text-[.875rem] text-muted" role="status" aria-live="polite">{activities.length} dokumentasi</span>
+  <div
+    class="col-start-2 mt-0 flex flex-wrap items-center gap-5 border-b border-line pb-2.5 tablet:col-start-1 mobile:gap-x-3.5 mobile:gap-y-2"
+    role="group"
+    aria-label="Filter kegiatan terdokumentasi"
+  >
+    {filters.map(({ category, label }, index) => (
+      <button
+        class="min-h-11 rounded-none border-0 border-b-2 border-transparent bg-transparent px-0 py-2.75 text-[1rem]
+        text-muted aria-pressed:border-navy aria-pressed:font-semibold aria-pressed:text-navy hover:border-blue
+        hover:text-blue aria-pressed:hover:border-blue aria-pressed:hover:text-blue mobile:text-[.875rem]"
+        type="button"
+        data-filter={category}
+        aria-pressed={index === 0 ? 'true' : 'false'}
+      >
+        {label}
+      </button>
+    ))}
+    <span
+      id="activity-count"
+      class="m-0 basis-full text-[.875rem] text-muted"
+      role="status"
+      aria-live="polite"
+    >
+      {activities.length} dokumentasi
+    </span>
   </div>
   <div class="col-start-2 tablet:col-start-1 tablet:-mt-6.5">
-    {activities.map(item => (
-      <article class="
-        grid grid-cols-[150px_minmax(0,1fr)] gap-5.5 border-b border-line compact:grid-cols-1
-        compact:gap-0 tablet:grid-cols-[165px_1fr] tablet:gap-5.5 mobile:grid-cols-1 mobile:gap-0
-      " data-category={item.category}>
-        <p class="
-          pt-6 text-[.875rem] text-blue compact:pt-4.5 tablet:pt-6 mobile:pt-4.5
+    {activities.map((item) => (
+      <article
+        class="grid grid-cols-[150px_minmax(0,1fr)] gap-5.5 border-b border-line compact:grid-cols-1
+        compact:gap-0 tablet:grid-cols-[165px_1fr] tablet:gap-5.5 mobile:grid-cols-1 mobile:gap-0"
+        data-category={item.category}
+      >
+        <p
+          class="pt-6 text-[.875rem] text-blue compact:pt-4.5 tablet:pt-6 mobile:pt-4.5
           [&>span]:mt-1.25 [&>span]:block [&>span]:text-[.8125rem] [&>span]:text-muted compact:[&>span]:ml-3
           compact:[&>span]:inline tablet:[&>span]:mt-1.5 tablet:[&>span]:ml-0 tablet:[&>span]:block
-          mobile:[&>span]:mt-1
-        ">{item.timing}<span>{item.label}</span></p>
+          mobile:[&>span]:mt-1"
+        >
+          {item.timing}
+          <span>{item.label}</span>
+        </p>
         <details class="[&>div]:max-w-[65ch] [&>div]:pb-5.75 [&>div>p]:text-[.94rem] [&>div>p]:text-muted">
-          <summary class="group/activity flex items-center justify-between gap-5 py-5.75 [&>svg]:text-blue compact:pt-2.25 tablet:pt-5.75 mobile:pt-2.5 mobile:pb-5"><span><span class="block text-[1.05rem] leading-normal font-semibold group-hover/activity:text-blue mobile:text-[1rem]">{item.title}</span><span class="mt-1.5 block text-[.91rem] text-muted mobile:text-[.9375rem]">{item.type}</span></span><Icon name="plus" size={19} class="transition-transform duration-200 ease-[ease] [[open]>summary>&]:rotate-45"/></summary>
-          <div><p>{item.description}</p><a class="inline-flex min-h-11 items-center gap-3.25 font-semibold hover:underline mt-3 text-[.875rem] text-blue" href={item.source} target="_blank" rel="noopener noreferrer">{item.sourceLabel} <Icon name="diagonal" size={16}/></a></div>
+          <summary class="group/activity flex items-center justify-between gap-5 py-5.75 [&>svg]:text-blue compact:pt-2.25 tablet:pt-5.75 mobile:pt-2.5 mobile:pb-5">
+            <span>
+              <span class="block text-[1.05rem] leading-normal font-semibold group-hover/activity:text-blue mobile:text-[1rem]">
+                {item.title}
+              </span>
+              <span class="mt-1.5 block text-[.91rem] text-muted mobile:text-[.9375rem]">
+                {item.type}
+              </span>
+            </span>
+            <Icon name="plus" size={19} class="accordion-indicator" />
+          </summary>
+          <div>
+            <p>{item.description}</p>
+            <a
+              class="source-link mt-3"
+              href={item.source}
+              target="_blank"
+              rel="noopener noreferrer"
+            >
+              {item.sourceLabel} <Icon name="diagonal" size={16} />
+            </a>
+          </div>
         </details>
       </article>
     ))}
   </div>
-  <noscript><p class="text-[.82rem] text-[#785c24]">Semua dokumentasi ditampilkan. Aktifkan JavaScript untuk memakai filter.</p></noscript>
+  <noscript>
+    <p class="text-[.82rem] text-[#785c24]">
+      Semua dokumentasi ditampilkan. Aktifkan JavaScript untuk memakai filter.
+    </p>
+  </noscript>
 </section>
 <script>
   const section = document.querySelector('#kegiatan');
-  const controls = section?.querySelectorAll<HTMLButtonElement>('[data-filter]') ?? [];
+  const controls =
+    section?.querySelectorAll<HTMLButtonElement>('[data-filter]') ?? [];
   const items = section?.querySelectorAll<HTMLElement>('[data-category]') ?? [];
   const count = section?.querySelector('#activity-count');
 
   function selectCategory(category: string) {
     if (!['all', 'mahasiswa', 'aik'].includes(category)) return;
-    controls.forEach(control => control.setAttribute('aria-pressed', String(control.dataset.filter === category)));
+    controls.forEach((control) =>
+      control.setAttribute(
+        'aria-pressed',
+        String(control.dataset.filter === category),
+      ),
+    );
     let visible = 0;
-    items.forEach(item => {
+    items.forEach((item) => {
       const show = category === 'all' || item.dataset.category === category;
       item.hidden = !show;
       if (show) visible++;
@@ -72,14 +132,28 @@ import { activities } from '../data/content';
     if (count) count.textContent = `${visible} dokumentasi`;
   }
 
-  controls.forEach(button => button.addEventListener('click', () => selectCategory(button.dataset.filter ?? 'all')));
+  controls.forEach((button) =>
+    button.addEventListener('click', () =>
+      selectCategory(button.dataset.filter ?? 'all'),
+    ),
+  );
 
   // Apply the filter before the native anchor scroll, after the list changes height.
   // General activity links restore all entries after a visit through the AIK CTA.
-  document.querySelectorAll<HTMLAnchorElement>('a[href="#kegiatan"]').forEach(link => {
-    link.addEventListener('click', event => {
-      if (event.defaultPrevented || event.button !== 0 || event.metaKey || event.ctrlKey || event.shiftKey || event.altKey) return;
-      selectCategory(link.dataset.activityFilter ?? 'all');
+  document
+    .querySelectorAll<HTMLAnchorElement>('a[href="#kegiatan"]')
+    .forEach((link) => {
+      link.addEventListener('click', (event) => {
+        if (
+          event.defaultPrevented ||
+          event.button !== 0 ||
+          event.metaKey ||
+          event.ctrlKey ||
+          event.shiftKey ||
+          event.altKey
+        )
+          return;
+        selectCategory(link.dataset.activityFilter ?? 'all');
+      });
     });
-  });
 </script>

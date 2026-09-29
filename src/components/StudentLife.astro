@@ -2,32 +2,83 @@
 import Icon from './Icon.astro';
 import { communities, communityInquiry } from '../data/content';
 ---
-<section class="container mx-auto w-[min(1232px,calc(100%-112px))] compact:w-[calc(100%-64px)] mobile:w-[calc(100%-40px)] py-19 mobile:py-11" id="komunitas" aria-labelledby="community-title">
+
+<section
+  class="page-container py-19 mobile:py-11"
+  id="komunitas"
+  aria-labelledby="community-title"
+>
   <div class="grid grid-cols-[1.06fr_.94fr] items-start gap-17 compact:gap-x-11 tablet:gap-8 stack:grid-cols-1 stack:gap-6.5">
     <div class="self-start tall-desktop:sticky tall-desktop:top-30 [&>p]:mt-4.5 [&>p]:max-w-[46ch] [&>p]:text-[1rem] [&>p]:text-muted">
-      <h2 class="font-editorial font-medium leading-[1.12] tracking-[-.035em] text-[clamp(2.1rem,3vw,2.7rem)] [text-wrap:initial]" id="community-title">Temukan lingkunganmu.</h2>
-      <p>Jelajahi komunitas mahasiswa SiberMu di bidang bahasa, bisnis, dan karya digital. Cari tahu kegiatan serta sumber informasinya.</p>
+      <h2
+        class="font-editorial font-medium leading-[1.12] tracking-[-.035em] text-[clamp(2.1rem,3vw,2.7rem)] [text-wrap:initial]"
+        id="community-title"
+      >
+        Temukan lingkunganmu.
+      </h2>
+      <p>
+        Jelajahi komunitas mahasiswa SiberMu di bidang bahasa, bisnis, dan karya
+        digital. Cari tahu kegiatan serta sumber informasinya.
+      </p>
       <figure class="mt-7">
-        <img class="aspect-[1.6] h-auto w-full rounded object-cover object-[right_55%] tablet:aspect-[1.5] stack:aspect-[1.6]" src="/images/community-campus-v2.webp" srcset="/images/community-campus-v2-small.webp 720w, /images/community-campus-v2-medium.webp 1080w, /images/community-campus-v2.webp 1440w" sizes="(max-width: 700px) calc(100vw - 40px), 46vw" width="1440" height="960" loading="lazy" decoding="async" alt="Ilustrasi AI empat mahasiswa beralmamater navy berdiskusi bersama di halaman kampus imajinatif" />
-        <figcaption class="mt-2.25 text-[.75rem] text-muted">Ilustrasi AI · Tokoh & bangunan fiktif</figcaption>
+        <img
+          class="aspect-[1.6] h-auto w-full rounded object-cover object-[right_55%] tablet:aspect-[1.5] stack:aspect-[1.6]"
+          src="/images/community-campus-v2.webp"
+          srcset="/images/community-campus-v2-small.webp 720w, /images/community-campus-v2-medium.webp 1080w, /images/community-campus-v2.webp 1440w"
+          sizes="(max-width: 700px) calc(100vw - 40px), 46vw"
+          width="1440"
+          height="960"
+          loading="lazy"
+          decoding="async"
+          alt="Ilustrasi AI empat mahasiswa beralmamater navy berdiskusi bersama di halaman kampus imajinatif"
+        />
+        <figcaption class="mt-2.25 text-[.75rem] text-muted">
+          Ilustrasi AI · Tokoh & bangunan fiktif
+        </figcaption>
       </figure>
     </div>
     <div class="stack:mt-0">
-      {communities.map(item => (
+      {communities.map((item) => (
         <details class="border-b border-line stack:first:border-t">
           <summary class="group/community flex items-center justify-between gap-6 py-5.75 [&>span]:min-w-0 [&>svg]:text-blue mobile:gap-5.5 mobile:py-5.5">
-            <span><span class="block text-[1.1rem] leading-[1.4] font-semibold group-hover/community:text-blue mobile:text-[1.05rem]">{item.title}</span><span class="mt-2 block max-w-[42ch] text-[.96rem] leading-[1.55] text-muted">{item.description}</span></span>
-            <Icon name="plus" size={19} class="transition-transform duration-200 ease-[ease] [[open]>summary>&]:rotate-45"/>
+            <span>
+              <span class="block text-[1.1rem] leading-[1.4] font-semibold group-hover/community:text-blue mobile:text-[1.05rem]">
+                {item.title}
+              </span>
+              <span class="mt-2 block max-w-[42ch] text-[.96rem] leading-[1.55] text-muted">
+                {item.description}
+              </span>
+            </span>
+            <Icon name="plus" size={19} class="accordion-indicator" />
           </summary>
           <div class="pb-6">
-            <p class="mb-2.25 text-[.875rem] font-semibold text-blue">{item.status}</p>
+            <p class="mb-2.25 text-[.875rem] font-semibold text-blue">
+              {item.status}
+            </p>
             <p class="text-[.94rem] text-muted">{item.detail}</p>
-            <a class="inline-flex min-h-11 items-center gap-3.25 font-semibold hover:underline mt-3 text-[.875rem] text-blue" href={item.source} target="_blank" rel="noopener noreferrer">{item.sourceLabel} <Icon name="diagonal" size={16}/></a>
+            <a
+              class="source-link mt-3"
+              href={item.source}
+              target="_blank"
+              rel="noopener noreferrer"
+            >
+              {item.sourceLabel} <Icon name="diagonal" size={16} />
+            </a>
           </div>
         </details>
       ))}
-      <p class="mt-5 max-w-[54ch] text-[.875rem] text-muted">Profil UKM bersumber dari arsip kemahasiswaan 2023 dan unggahan 2024. Untuk kegiatan dan cara bergabung terbaru, hubungi kampus.</p>
-      <a class="inline-flex min-h-11 items-center gap-3.25 font-semibold hover:underline mt-2 text-[.94rem] text-blue" href={communityInquiry} target="_blank" rel="noopener noreferrer">Tanyakan informasi UKM <Icon name="diagonal" size={16}/></a>
+      <p class="mt-5 max-w-[54ch] text-[.875rem] text-muted">
+        Profil UKM bersumber dari arsip kemahasiswaan 2023 dan unggahan 2024.
+        Untuk kegiatan dan cara bergabung terbaru, hubungi kampus.
+      </p>
+      <a
+        class="inline-flex min-h-11 items-center gap-3.25 font-semibold hover:underline mt-2 text-[.94rem] text-blue"
+        href={communityInquiry}
+        target="_blank"
+        rel="noopener noreferrer"
+      >
+        Tanyakan informasi UKM <Icon name="diagonal" size={16} />
+      </a>
     </div>
   </div>
 </section>

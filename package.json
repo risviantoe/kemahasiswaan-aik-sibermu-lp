@@ -6,7 +6,9 @@
   "scripts": {
     "dev": "node ./node_modules/astro/bin/astro.mjs dev --host 127.0.0.1",
     "build": "node ./node_modules/astro/bin/astro.mjs check && node ./node_modules/astro/bin/astro.mjs build",
-    "preview": "node ./node_modules/astro/bin/astro.mjs preview --host 127.0.0.1"
+    "preview": "node ./node_modules/astro/bin/astro.mjs preview --host 127.0.0.1",
+    "format": "node ./node_modules/prettier/bin/prettier.cjs --write src astro.config.mjs package.json prettier.config.mjs",
+    "format:check": "node ./node_modules/prettier/bin/prettier.cjs --check src astro.config.mjs package.json prettier.config.mjs"
   },
   "dependencies": {
     "@astrojs/check": "0.9.10",
@@ -19,5 +21,10 @@
     "astro": "7.3.2",
     "tailwindcss": "4.3.3",
     "typescript": "6.0.3"
+  },
+  "devDependencies": {
+    "prettier": "^3.9.9",
+    "prettier-plugin-astro": "^1.1.0",
+    "prettier-plugin-tailwindcss": "^0.8.1"
   }
 }

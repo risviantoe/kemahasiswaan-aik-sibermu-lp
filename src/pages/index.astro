@@ -8,85 +8,151 @@ import Achievements from '../components/Achievements.astro';
 import Aik from '../components/Aik.astro';
 import Activities from '../components/Activities.astro';
 import Services from '../components/Services.astro';
+
+const quickLinks = [
+  {
+    href: '#komunitas',
+    icon: 'people',
+    title: 'Temukan komunitas',
+    description: 'Organisasi & ruang minatmu',
+  },
+  {
+    href: '#aik',
+    icon: 'book',
+    title: 'Belajar & mengamalkan',
+    description: 'Kenali kegiatan dan nilai AIK',
+  },
+  {
+    href: '#layanan',
+    icon: 'heart',
+    title: 'Dapatkan dukungan',
+    description: 'Akses layanan mahasiswa',
+  },
+] as const;
 ---
+
 <Layout>
   <Header />
   <main id="main">
-    <section class="relative isolate overflow-clip bg-hero text-navy" id="beranda" aria-labelledby="hero-title">
-      <div class="
-        relative flex min-h-160 items-center gap-14 pt-12.5 pb-16 small-desktop:min-h-150
+    <section
+      class="relative isolate overflow-clip bg-hero text-navy"
+      id="beranda"
+      aria-labelledby="hero-title"
+    >
+      <div
+        class="relative flex min-h-160 items-center gap-14 pt-12.5 pb-16 small-desktop:min-h-150
         small-desktop:gap-8 tablet:min-h-0 tablet:flex-col tablet:items-stretch tablet:gap-0 tablet:pt-9
-        tablet:pb-0 hero-tablet:pt-8 mobile:pt-7 container mx-auto w-[min(1232px,calc(100%-112px))]
-        compact:w-[calc(100%-64px)] mobile:w-[calc(100%-40px)]
-      ">
+        tablet:pb-0 hero-tablet:pt-8 mobile:pt-7 page-container"
+      >
         <div class="relative z-1 min-w-0 w-[46%] pb-0 small-desktop:w-[48%] tablet:w-full tablet:max-w-160 hero-tablet:max-w-none">
-          <p class="mb-4.5 text-[.8125rem] font-semibold text-navy hero-tablet:mb-3.5">Kemahasiswaan & AIK · SiberMu</p>
-          <h1 class="
-            text-[clamp(2.75rem,3.8vw,3.45rem)] leading-[1.08] font-[650] tracking-[-.04em] text-navy
+          <p class="mb-4.5 text-[.8125rem] font-semibold text-navy hero-tablet:mb-3.5">
+            Kemahasiswaan & AIK · SiberMu
+          </p>
+          <h1
+            class="text-[clamp(2.75rem,3.8vw,3.45rem)] leading-[1.08] font-[650] tracking-[-.04em] text-navy
             small-desktop:text-[clamp(2.4rem,3.9vw,2.7rem)] tablet:text-[clamp(2.5rem,6vw,3.75rem)]
             hero-tablet:text-[clamp(2rem,5.2vw,2.875rem)] hero-tablet:leading-[1.12]
-            mobile:text-[clamp(2.125rem,9.2vw,2.5rem)]
-          " id="hero-title">
-            <span class="block">Belajar dari <span class="block hero-tablet:inline">mana saja.</span></span>
-            <span class="block font-bold text-blue">Tumbuh bersama <span class="block hero-tablet:inline">siapa saja.</span></span>
+            mobile:text-[clamp(2.125rem,9.2vw,2.5rem)]"
+            id="hero-title"
+          >
+            <span class="block">
+              Belajar dari{' '}
+              <span class="block hero-tablet:inline">mana saja.</span>
+            </span>
+            <span class="block font-bold text-blue">
+              Tumbuh bersama{' '}
+              <span class="block hero-tablet:inline">siapa saja.</span>
+            </span>
           </h1>
-          <p class="mt-6 max-w-[46ch] text-[1rem] leading-[1.65] text-hero-copy hero-tablet:mt-4.5 hero-tablet:max-w-[60ch]">Temukan komunitas, ruang berkarya, dan layanan mahasiswa. Kenali Al-Islam dan Kemuhammadiyahan sebagai landasan untuk bertumbuh dan memberi manfaat.</p>
+          <p class="mt-6 max-w-[46ch] text-[1rem] leading-[1.65] text-hero-copy hero-tablet:mt-4.5 hero-tablet:max-w-[60ch]">
+            Temukan komunitas, ruang berkarya, dan layanan mahasiswa. Kenali
+            Al-Islam dan Kemuhammadiyahan sebagai landasan untuk bertumbuh dan
+            memberi manfaat.
+          </p>
           <div class="mt-6.5 flex flex-wrap items-center gap-x-6 gap-y-4 hero-tablet:mt-5 mobile:gap-x-4.5 mobile:gap-y-3">
-            <a class="
-              inline-flex items-center justify-center gap-6.25 rounded-md border border-transparent
+            <a
+              class="inline-flex items-center justify-center gap-6.25 rounded-md border border-transparent
               font-semibold transition-[background,translate] duration-200 ease-[ease] hover:-translate-y-0.5
               bg-navy text-paper hover:bg-deep min-h-12.5 px-5.5 py-3.25 text-[.9rem] mobile:gap-4
-              mobile:px-4.5
-            " href="#komunitas">Jelajahi komunitas <Icon name="diagonal" size={19} /></a>
-            <a class="inline-flex min-h-11 items-center gap-3.25 font-semibold hover:underline text-[.9rem]" href="#aik">Kenali AIK <Icon size={19} /></a>
+              mobile:px-4.5"
+              href="#komunitas"
+            >
+              Jelajahi komunitas <Icon name="diagonal" size={19} />
+            </a>
+            <a
+              class="inline-flex min-h-11 items-center gap-3.25 font-semibold hover:underline text-[.9rem]"
+              href="#aik"
+            >
+              Kenali AIK <Icon size={19} />
+            </a>
           </div>
-          <p class="mt-5 text-[.8125rem] text-hero-copy hero-tablet:mt-3.5">Universitas Siber Muhammadiyah</p>
+          <p class="mt-5 text-[.8125rem] text-hero-copy hero-tablet:mt-3.5">
+            Universitas Siber Muhammadiyah
+          </p>
         </div>
-        <figure class="
-          absolute inset-y-0 inset-x-[calc((100%-100vw)/2)] z-0 min-w-0 tablet:relative
-          tablet:inset-auto tablet:mt-4.5 tablet:mx-0 tablet:w-screen tablet:self-center hero-tablet:mt-0
-        ">
-          <div class="
-            hero-image-fade absolute inset-0 overflow-hidden tablet:relative tablet:h-110
-            hero-tablet:h-[clamp(320px,46vw,396px)] mobile:h-[clamp(280px,78vw,420px)]
-          ">
-            <img class="
-              h-full w-full object-cover object-[center_25%] tablet:object-right hero-tablet:ml-[-12%]
-              hero-tablet:w-[112%] hero-tablet:max-w-none hero-tablet:object-[right_20%]
-            " src="/images/hero-campus-v4-optimized.webp" srcset="/images/hero-campus-v4-small.webp 1000w, /images/hero-campus-v4-optimized.webp 1774w" sizes="(max-width: 640px) 640px, (max-width: 900px) 112vw, 100vw" alt="Ilustrasi AI tiga mahasiswa dengan laptop dan buku di depan bangunan kampus imajinatif" width="1774" height="887" fetchpriority="high" />
+        <figure
+          class="absolute inset-y-0 inset-x-[calc((100%-100vw)/2)] z-0 min-w-0 tablet:relative
+          tablet:inset-auto tablet:mt-4.5 tablet:mx-0 tablet:w-screen tablet:self-center hero-tablet:mt-0"
+        >
+          <div
+            class="hero-image-fade absolute inset-0 overflow-hidden tablet:relative tablet:h-110
+            hero-tablet:h-[clamp(320px,46vw,396px)] mobile:h-[clamp(280px,78vw,420px)]"
+          >
+            <img
+              class="h-full w-full object-cover object-[center_25%] tablet:object-right hero-tablet:ml-[-12%]
+              hero-tablet:w-[112%] hero-tablet:max-w-none hero-tablet:object-[right_20%]"
+              src="/images/hero-campus-v4-optimized.webp"
+              srcset="/images/hero-campus-v4-small.webp 1000w, /images/hero-campus-v4-optimized.webp 1774w"
+              sizes="(max-width: 640px) 640px, (max-width: 900px) 112vw, 100vw"
+              alt="Ilustrasi AI tiga mahasiswa dengan laptop dan buku di depan bangunan kampus imajinatif"
+              width="1774"
+              height="887"
+              fetchpriority="high"
+            />
           </div>
-          <figcaption class="
-            absolute right-[max(32px,calc((100%-1232px)/2))] bottom-3 bg-hero px-2 py-0.75 text-right text-[.75rem]
+          <figcaption
+            class="absolute right-[max(32px,calc((100%-1232px)/2))] bottom-3 bg-hero px-2 py-0.75 text-right text-[.75rem]
             text-hero-copy tablet:static tablet:px-8 tablet:pt-2 tablet:pb-3.5 hero-tablet:pt-1.5 hero-tablet:pb-2.5
-            mobile:px-5 mobile:pt-1.5 mobile:pb-3
-          ">Ilustrasi AI · Tokoh & bangunan fiktif</figcaption>
+            mobile:px-5 mobile:pt-1.5 mobile:pb-3"
+          >
+            Ilustrasi AI · Tokoh & bangunan fiktif
+          </figcaption>
         </figure>
       </div>
-      <div class="
-        container mx-auto w-[min(1232px,calc(100%-112px))] compact:w-[calc(100%-64px)]
-        mobile:w-[calc(100%-40px)] flex items-center justify-between gap-5 border-t
+      <div
+        class="page-container flex items-center justify-between gap-5 border-t
         border-[#c4d8e9] py-4 text-[.8125rem] text-muted [&>span:first-child]:font-semibold
         [&>span:first-child]:text-navy mobile:flex-wrap mobile:items-start mobile:gap-x-5 mobile:gap-y-2
-        mobile:py-3.5
-      "><span>Ruang Tumbuh SiberMu</span><span>Terhubung. Bertumbuh. Berkontribusi.</span></div>
+        mobile:py-3.5"
+      >
+        <span>Ruang Tumbuh SiberMu</span>
+        <span>Terhubung. Bertumbuh. Berkontribusi.</span>
+      </div>
     </section>
-    <section class="border-y border-line bg-quiet" aria-label="Mulai dari kebutuhanmu"><div class="container mx-auto w-[min(1232px,calc(100%-112px))] compact:w-[calc(100%-64px)] mobile:w-[calc(100%-40px)] grid grid-cols-3 tablet:grid-cols-1">
-      <a class="
-        relative flex items-center gap-4.75 px-6.25 py-7.75 transition-colors duration-200 ease-[ease]
-        not-first:border-l not-first:border-line hover:bg-sky compact:gap-3.25 compact:px-4.5 tablet:py-5
-        tablet:not-first:border-t tablet:not-first:border-l-0 [&>svg:last-child]:ml-auto
-      " href="#komunitas"><Icon name="people" size={26} /><span class="text-[.96rem] font-semibold">Temukan komunitas<small class="mt-0.75 block text-[.875rem] font-normal text-muted">Organisasi & ruang minatmu</small></span><Icon name="diagonal" size={20} /></a>
-      <a class="
-        relative flex items-center gap-4.75 px-6.25 py-7.75 transition-colors duration-200 ease-[ease]
-        not-first:border-l not-first:border-line hover:bg-sky compact:gap-3.25 compact:px-4.5 tablet:py-5
-        tablet:not-first:border-t tablet:not-first:border-l-0 [&>svg:last-child]:ml-auto
-      " href="#aik"><Icon name="book" size={26} /><span class="text-[.96rem] font-semibold">Belajar & mengamalkan<small class="mt-0.75 block text-[.875rem] font-normal text-muted">Kenali kegiatan dan nilai AIK</small></span><Icon name="diagonal" size={20} /></a>
-      <a class="
-        relative flex items-center gap-4.75 px-6.25 py-7.75 transition-colors duration-200 ease-[ease]
-        not-first:border-l not-first:border-line hover:bg-sky compact:gap-3.25 compact:px-4.5 tablet:py-5
-        tablet:not-first:border-t tablet:not-first:border-l-0 [&>svg:last-child]:ml-auto
-      " href="#layanan"><Icon name="heart" size={26} /><span class="text-[.96rem] font-semibold">Dapatkan dukungan<small class="mt-0.75 block text-[.875rem] font-normal text-muted">Akses layanan mahasiswa</small></span><Icon name="diagonal" size={20} /></a>
-    </div></section>
+    <section
+      class="border-y border-line bg-quiet"
+      aria-label="Mulai dari kebutuhanmu"
+    >
+      <div class="page-container grid grid-cols-3 tablet:grid-cols-1">
+        {quickLinks.map(({ href, icon, title, description }) => (
+          <a
+            class="relative flex items-center gap-4.75 px-6.25 py-7.75 transition-colors duration-200 ease-[ease]
+          not-first:border-l not-first:border-line hover:bg-sky compact:gap-3.25 compact:px-4.5 tablet:py-5
+          tablet:not-first:border-t tablet:not-first:border-l-0 [&>svg:last-child]:ml-auto"
+            href={href}
+          >
+            <Icon name={icon} size={26} />
+            <span class="text-[.96rem] font-semibold">
+              {title}
+              <small class="mt-0.75 block text-[.875rem] font-normal text-muted">
+                {description}
+              </small>
+            </span>
+            <Icon name="diagonal" size={20} />
+          </a>
+        ))}
+      </div>
+    </section>
     <Journey />
     <Aik />
     <StudentLife />

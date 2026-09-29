@@ -10,14 +10,17 @@ export const achievements = [
     program: 'S1 PJJ Akuntansi',
     level: 'Internasional',
     year: '2026',
-    competition: 'Global Leadership for Sustainable Economy and Well-Being: Idea Presentation',
-    description: 'Dua mahasiswa Akuntansi membawa gagasan mereka ke ajang yang diselenggarakan Universiti Pertahanan Nasional Malaysia dan Universitas Ahmad Dahlan.',
+    competition:
+      'Global Leadership for Sustainable Economy and Well-Being: Idea Presentation',
+    description:
+      'Dua mahasiswa Akuntansi membawa gagasan mereka ke ajang yang diselenggarakan Universiti Pertahanan Nasional Malaysia dan Universitas Ahmad Dahlan.',
     publication: 'Dipublikasikan 6 Mei 2026',
     source: 'https://www.instagram.com/sibermu/p/DX_YuVKAcc2/',
     sourceLabel: 'Lihat dokumentasi di Instagram',
     image: '/images/achievement-global-leadership.webp',
     imageSmall: '/images/achievement-global-leadership-small.webp',
-    imageAlt: 'Poster SiberMu yang menampilkan Hilmawan dan Nur Khanifah dengan medali penghargaan.',
+    imageAlt:
+      'Poster SiberMu yang menampilkan Hilmawan dan Nur Khanifah dengan medali penghargaan.',
     imageCredit: 'Dokumentasi @sibermu · Mei 2026',
   },
   {
@@ -30,13 +33,15 @@ export const achievements = [
     level: 'Nasional',
     year: '2025',
     competition: 'KOSPRESIA 2025 & OPPRENAS 2025',
-    description: 'Nabila meraih medali emas bidang Biologi dalam dua olimpiade tingkat nasional. Kedua capaian tahun 2025 ini dibagikan SiberMu pada Mei 2026.',
+    description:
+      'Nabila meraih medali emas bidang Biologi dalam dua olimpiade tingkat nasional. Kedua capaian tahun 2025 ini dibagikan SiberMu pada Mei 2026.',
     publication: 'Dipublikasikan 15 Mei 2026',
     source: 'https://www.instagram.com/sibermu/p/DYWkhXUml6z/',
     sourceLabel: 'Lihat dokumentasi di Instagram',
     image: '/images/achievement-nabila.webp',
     imageSmall: '/images/achievement-nabila-small.webp',
-    imageAlt: 'Poster prestasi Nabila Syafira dengan keterangan dua medali emas tingkat nasional.',
+    imageAlt:
+      'Poster prestasi Nabila Syafira dengan keterangan dua medali emas tingkat nasional.',
     imageCredit: 'Dokumentasi @sibermu · Mei 2026',
   },
   {
@@ -49,13 +54,15 @@ export const achievements = [
     level: 'Nasional',
     year: '2026',
     competition: 'Creative Competition 2026',
-    description: 'Cristian meraih juara pertama kategori karya ilmiah dalam kompetisi nasional yang melibatkan Institut Shanti Bhuana dan Universitas Kristen Immanuel Yogyakarta.',
+    description:
+      'Cristian meraih juara pertama kategori karya ilmiah dalam kompetisi nasional yang melibatkan Institut Shanti Bhuana dan Universitas Kristen Immanuel Yogyakarta.',
     publication: 'Dipublikasikan Juni 2026',
     source: 'https://www.instagram.com/sibermu/p/DZrYTDbgUgY/',
     sourceLabel: 'Lihat dokumentasi di Instagram',
     image: '/images/achievement-cristian.webp',
     imageSmall: '/images/achievement-cristian-small.webp',
-    imageAlt: 'Poster SiberMu tentang prestasi Cristian Bowo Firdaus dalam lomba karya ilmiah nasional.',
+    imageAlt:
+      'Poster SiberMu tentang prestasi Cristian Bowo Firdaus dalam lomba karya ilmiah nasional.',
     imageCredit: 'Dokumentasi @sibermu · Juni 2026',
   },
   {
@@ -68,13 +75,15 @@ export const achievements = [
     level: 'Nasional',
     year: '2026',
     competition: 'Festival Akademik Nasional (FASNAS) 2026',
-    description: 'Fitria menorehkan capaian dalam sejumlah kompetisi akademik nasional. Sertifikat yang dibagikan SiberMu mencakup medali emas Matematika dan Bahasa Inggris pada FASNAS 2026.',
+    description:
+      'Fitria menorehkan capaian dalam sejumlah kompetisi akademik nasional. Sertifikat yang dibagikan SiberMu mencakup medali emas Matematika dan Bahasa Inggris pada FASNAS 2026.',
     publication: 'Dipublikasikan 15 Juni 2026',
     source: 'https://www.instagram.com/sibermu/p/DZmcn9SjAE6/',
     sourceLabel: 'Lihat dokumentasi di Instagram',
     image: '/images/achievement-fitria.webp',
     imageSmall: '/images/achievement-fitria-small.webp',
-    imageAlt: 'Sertifikat FASNAS 2026 atas nama Fitria Nisail Laily untuk medali emas Matematika dan Bahasa Inggris.',
+    imageAlt:
+      'Sertifikat FASNAS 2026 atas nama Fitria Nisail Laily untuk medali emas Matematika dan Bahasa Inggris.',
     imageCredit: 'Dokumentasi @sibermu · Juni 2026',
   },
   {
@@ -86,14 +95,18 @@ export const achievements = [
     program: 'S1 Administrasi Kesehatan',
     level: 'Nasional',
     year: '2023',
-    competition: 'Medical Scientific Competition and Award of UIN Malang (MIDBRAIN) 2023',
-    description: 'Nada dan Rahmat meraih juara kedua esai ilmiah dalam kompetisi tingkat nasional yang diselenggarakan UIN Malang.',
+    competition:
+      'Medical Scientific Competition and Award of UIN Malang (MIDBRAIN) 2023',
+    description:
+      'Nada dan Rahmat meraih juara kedua esai ilmiah dalam kompetisi tingkat nasional yang diselenggarakan UIN Malang.',
     publication: 'Dipublikasikan 5 Januari 2024',
-    source: 'https://sibermu.ac.id/artikel/mahasiswa-sibermu-berhasil-juarai-lomba-esai-ilmiah-tingkat-nasional-medical-scientific-competition-and-award-of-uin-malang-midbrain-2023/',
+    source:
+      'https://sibermu.ac.id/artikel/mahasiswa-sibermu-berhasil-juarai-lomba-esai-ilmiah-tingkat-nasional-medical-scientific-competition-and-award-of-uin-malang-midbrain-2023/',
     sourceLabel: 'Baca berita di SiberMu',
     image: '/images/midbrain-2023.webp',
     imageSmall: '/images/midbrain-2023-small.webp',
-    imageAlt: 'Pengumuman juara kedua esai ilmiah MIDBRAIN 2023 atas nama Nada Pratiwi, dari berita SiberMu.',
+    imageAlt:
+      'Pengumuman juara kedua esai ilmiah MIDBRAIN 2023 atas nama Nada Pratiwi, dari berita SiberMu.',
     imageCredit: 'Dokumentasi SiberMu · Januari 2024',
   },
 ] as const;

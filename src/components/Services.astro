@@ -1,142 +1,484 @@
 ---
 import Icon from './Icon.astro';
 import { achievements } from '../data/achievements';
-import { activities, faqs, sources, socialLinks, universityContact } from '../data/content';
+import {
+  activities,
+  faqs,
+  sources,
+  socialLinks,
+  universityContact,
+} from '../data/content';
+
+const serviceLinks = [
+  {
+    href: sources.academicHelp,
+    title: 'Bantuan akademik',
+    description: 'Kontak akademik, persuratan, reset akun, dan keuangan.',
+  },
+  {
+    href: sources.studentPortal,
+    title: 'Portal Mahasiswa',
+    description: 'Akses layanan menggunakan akun mahasiswa SiberMu.',
+  },
+  {
+    href: sources.admissions,
+    title: 'Informasi KIP Kuliah',
+    description: 'Kenali persyaratan dan informasi pada laman Admisi.',
+  },
+];
+const footerNavClass =
+  'm-0 flex flex-col items-start gap-3 text-[.9375rem] [&>a]:text-inverse [&>a:hover]:underline compact:first-of-type:pr-14.5 mobile:first-of-type:pr-0';
 ---
-<section class="bg-quiet pt-[58px] pb-11 mobile:pt-11 mobile:pb-[30px]" id="layanan" aria-labelledby="services-title">
-  <div class="container mx-auto w-[min(1232px,calc(100%_-_112px))] compact:w-[calc(100%_-_64px)] mobile:w-[calc(100%_-_40px)]">
+
+<section
+  class="bg-quiet pt-14.5 pb-11 mobile:pt-11 mobile:pb-7.5"
+  id="layanan"
+  aria-labelledby="services-title"
+>
+  <div class="page-container">
     <div class="block">
       <div class="block [&>p]:mt-3.5 [&>p]:max-w-[60ch] [&>p]:text-[1rem] [&>p]:text-muted">
-        <h2 id="services-title" class="font-editorial font-medium leading-[1.12] tracking-[-.035em] text-balance text-[clamp(2.15rem,3.4vw,3.1rem)]">Butuh arahan?</h2>
-        <p>Pilih layanan sesuai kebutuhanmu. Semua tautan mengarah ke kanal resmi SiberMu.</p>
+        <h2 id="services-title" class="section-heading">
+          Butuh arahan?
+        </h2>
+        <p>
+          Pilih layanan sesuai kebutuhanmu. Semua tautan mengarah ke kanal resmi
+          SiberMu.
+        </p>
       </div>
       <div class="mt-8 grid grid-cols-3 stack:mt-6 stack:grid-cols-1">
-        <a class="
-          flex items-start justify-between gap-5 px-7 py-0 first:pl-0 last:pr-0 not-first:border-l
-          not-first:border-[#cad9e7] [&_strong]:text-[1.05rem] [&_strong]:font-semibold [&_small]:mt-2.5
-          [&_small]:block [&_small]:text-[.94rem] [&_small]:text-muted [&>svg]:mt-1 [&>svg]:text-blue
-          hover:[&_strong]:text-blue hover:[&_strong]:underline stack:px-0 stack:py-5 stack:not-first:border-t
-          stack:not-first:border-l-0 stack:[&_small]:mt-1.5
-        " href={sources.academicHelp} target="_blank" rel="noopener noreferrer"><span><strong>Bantuan akademik</strong><small>Kontak akademik, persuratan, reset akun, dan keuangan.</small></span><Icon name="diagonal" size={19}/></a>
-        <a class="
-          flex items-start justify-between gap-5 px-7 py-0 first:pl-0 last:pr-0 not-first:border-l
-          not-first:border-[#cad9e7] [&_strong]:text-[1.05rem] [&_strong]:font-semibold [&_small]:mt-2.5
-          [&_small]:block [&_small]:text-[.94rem] [&_small]:text-muted [&>svg]:mt-1 [&>svg]:text-blue
-          hover:[&_strong]:text-blue hover:[&_strong]:underline stack:px-0 stack:py-5 stack:not-first:border-t
-          stack:not-first:border-l-0 stack:[&_small]:mt-1.5
-        " href={sources.studentPortal} target="_blank" rel="noopener noreferrer"><span><strong>Portal Mahasiswa</strong><small>Akses layanan menggunakan akun mahasiswa SiberMu.</small></span><Icon name="diagonal" size={19}/></a>
-        <a class="
-          flex items-start justify-between gap-5 px-7 py-0 first:pl-0 last:pr-0 not-first:border-l
-          not-first:border-[#cad9e7] [&_strong]:text-[1.05rem] [&_strong]:font-semibold [&_small]:mt-2.5
-          [&_small]:block [&_small]:text-[.94rem] [&_small]:text-muted [&>svg]:mt-1 [&>svg]:text-blue
-          hover:[&_strong]:text-blue hover:[&_strong]:underline stack:px-0 stack:py-5 stack:not-first:border-t
-          stack:not-first:border-l-0 stack:[&_small]:mt-1.5
-        " href={sources.admissions} target="_blank" rel="noopener noreferrer"><span><strong>Informasi KIP Kuliah</strong><small>Kenali persyaratan dan informasi pada laman Admisi.</small></span><Icon name="diagonal" size={19}/></a>
+        {serviceLinks.map(({ href, title, description }) => (
+          <a
+            class="flex items-start justify-between gap-5 px-7 py-0 first:pl-0 last:pr-0 not-first:border-l
+            not-first:border-[#cad9e7] [&_strong]:text-[1.05rem] [&_strong]:font-semibold [&_small]:mt-2.5
+            [&_small]:block [&_small]:text-[.94rem] [&_small]:text-muted [&>svg]:mt-1 [&>svg]:text-blue
+            hover:[&_strong]:text-blue hover:[&_strong]:underline stack:px-0 stack:py-5 stack:not-first:border-t
+            stack:not-first:border-l-0 stack:[&_small]:mt-1.5"
+            href={href}
+            target="_blank"
+            rel="noopener noreferrer"
+          >
+            <span>
+              <strong>{title}</strong>
+              <small>{description}</small>
+            </span>
+            <Icon name="diagonal" size={19} />
+          </a>
+        ))}
       </div>
     </div>
-    <div class="
-      mt-[38px] grid grid-cols-[.72fr_1.28fr] gap-[72px] border-t border-[#cad9e7] pt-7
-      compact:gap-x-11 tablet:grid-cols-[.7fr_1.3fr] tablet:gap-8 stack:grid-cols-1 stack:gap-[26px] mobile:mt-6
-      mobile:pt-[26px]
-    ">
-      <h3 class="font-editorial text-[1.65rem] font-medium tracking-[-.025em]">Sebelum melangkah.</h3>
-      <div class="
-        [&>details]:border-b [&>details]:border-line [&>details:last-child]:border-b-0
+    <div
+      class="mt-9.5 grid grid-cols-[.72fr_1.28fr] gap-18 border-t border-[#cad9e7] pt-7
+      compact:gap-x-11 tablet:grid-cols-[.7fr_1.3fr] tablet:gap-8 stack:grid-cols-1 stack:gap-6.5 mobile:mt-6
+      mobile:pt-6.5"
+    >
+      <h3 class="font-editorial text-[1.65rem] font-medium tracking-tight">
+        Sebelum melangkah.
+      </h3>
+      <div
+        class="[&>details]:border-b [&>details]:border-line [&>details:last-child]:border-b-0
         [&>details:first-child>summary]:pt-0 [&>details>p]:pb-2 [&>details>p]:text-[.94rem]
-        [&>details>p]:text-muted
-      ">{faqs.map(faq => <details><summary class="flex items-center justify-between gap-7 py-[18px] text-[.94rem] font-medium mobile:gap-5">{faq.question}<Icon name="plus" size={19} class="transition-transform duration-200 ease-[ease] [[open]>summary>&]:rotate-45"/></summary><p>{faq.answer}</p><a class="inline-flex min-h-11 items-center gap-[13px] font-semibold hover:underline mb-3 text-[.94rem] text-blue" href={faq.href} target="_blank" rel="noopener noreferrer">{faq.linkLabel} <Icon name="diagonal" size={16}/></a></details>)}</div>
+        [&>details>p]:text-muted"
+      >
+        {faqs.map((faq) => (
+          <details>
+            <summary class="flex items-center justify-between gap-7 py-4.5 text-[.94rem] font-medium mobile:gap-5">
+              {faq.question}
+              <Icon name="plus" size={19} class="accordion-indicator" />
+            </summary>
+            <p>{faq.answer}</p>
+            <a
+              class="inline-flex min-h-11 items-center gap-3.25 font-semibold hover:underline mb-3 text-[.94rem] text-blue"
+              href={faq.href}
+              target="_blank"
+              rel="noopener noreferrer"
+            >
+              {faq.linkLabel} <Icon name="diagonal" size={16} />
+            </a>
+          </details>
+        ))}
+      </div>
     </div>
   </div>
 </section>
-<section class="closing-backdrop relative text-paper [&_:focus-visible]:outline-sky" aria-labelledby="closing-title">
-  <div class="
-    container mx-auto w-[min(1232px,calc(100%_-_112px))] compact:w-[calc(100%_-_64px)]
-    mobile:w-[calc(100%_-_40px)] flex min-h-[230px] items-center justify-between gap-12 pt-11
-    pb-7 stack:min-h-0 stack:flex-col stack:items-start stack:gap-[26px] mobile:pt-[38px] mobile:pb-6
-    [&_h2+p]:mt-[17px] [&_h2+p]:text-[1rem] [&_h2+p]:text-inverse
-  ">
-    <div><h2 id="closing-title" class="font-editorial font-medium leading-[1.12] tracking-[-.035em] text-balance text-[clamp(2rem,3.2vw,2.8rem)] text-paper">Masa kuliahmu adalah<br />sebuah perjalanan.</h2><p>Temukan teman belajar. Kembangkan minatmu. Ambil bagian.</p></div>
-    <a class="
-      inline-flex items-center justify-center gap-[25px] rounded-md border border-transparent
-      font-semibold transition-[background,translate] duration-200 ease-[ease] hover:-translate-y-0.5
-      min-h-[50px] shrink-0 bg-paper px-[22px] py-[13px] text-[.92rem] text-navy hover:bg-sky
-    " href="#komunitas">Temukan komunitasmu <Icon size={18}/></a>
-  </div>
-  <p class="
-    container mx-auto w-[min(1232px,calc(100%_-_112px))] compact:w-[calc(100%_-_64px)]
-    mobile:w-[calc(100%_-_40px)] pb-3.5 text-right text-[.75rem] text-inverse
-  ">Ilustrasi AI · Bangunan fiktif</p>
-</section>
-<footer class="bg-night pt-[53px] text-white [&_:focus-visible]:outline-sky mobile:pt-10"><div class="container mx-auto w-[min(1232px,calc(100%_-_112px))] compact:w-[calc(100%_-_64px)] mobile:w-[calc(100%_-_40px)]">
-  <div class="
-    relative grid grid-cols-[minmax(0,1.4fr)_minmax(0,.85fr)_minmax(0,.85fr)_minmax(0,1.2fr)]
-    items-start justify-between gap-9 pb-[35px] [&>*]:min-w-0 compact:grid-cols-2 compact:gap-x-12
-    compact:gap-y-9 mobile:gap-x-5 mobile:gap-y-7
-  ">
-    <div class="compact:pr-0 mobile:col-span-full">
-      <a class="flex min-w-0 items-center gap-2.5 text-paper" href="#beranda">
-        <span class="
-          block shrink-0 overflow-hidden [&>img]:h-full [&>img]:w-auto [&>img]:max-w-none h-[42px] w-12
-          mobile:h-[38.5px] mobile:w-11 [&>img]:brightness-0 [&>img]:invert
-        " aria-hidden="true"><img src="/images/sibermu-emblem-official.webp" width="208" height="182" alt="" loading="lazy" /></span>
-        <span class="
-          block min-w-0 [&>strong]:block [&>strong]:font-display [&>strong]:font-bold
-          [&>strong]:leading-[1.3] [&>strong]:uppercase [&>small]:block [&>small]:font-normal [&>small]:leading-[1.4]
-          [&>strong]:text-[1rem] [&>small]:mt-1 [&>small]:text-[.75rem] [&>small]:text-inverse
-        "><strong>Kemahasiswaan & AIK</strong><small>Universitas Siber Muhammadiyah</small></span>
-      </a>
-      <p class="mt-3.5 max-w-[31ch] text-[.9375rem] text-inverse">Ruang Tumbuh SiberMu.<br />Terhubung. Bertumbuh. Berkontribusi.</p>
-      <nav class="mt-5 flex flex-nowrap gap-2" aria-label="Media sosial SiberMu">
-        {socialLinks.map(social => <a class="flex h-11 flex-[0_0_44px] items-center justify-center rounded-md border border-[#3d5772] text-inverse hover:text-paper hover:underline hover:underline-offset-4" href={social.href} target="_blank" rel="noopener noreferrer" aria-label={`${social.name} SiberMu (tab baru)`} title={social.name}><Icon name={social.icon} size={22}/></a>)}
-      </nav>
-    </div>
-    <nav class="
-      m-0 flex flex-col items-start gap-3 text-[.9375rem] [&>a]:text-inverse [&>a:hover]:underline
-      compact:first-of-type:pr-[58px] mobile:first-of-type:pr-0
-    " aria-label="Jelajahi halaman"><h3 class="mb-1.5 font-sans text-[.94rem] font-semibold text-paper">Jelajahi</h3><a href="#komunitas">Organisasi & komunitas</a><a href="#aik">Al-Islam & Kemuhammadiyahan</a><a href="#prestasi">Prestasi mahasiswa</a><a href="#kegiatan">Dokumentasi kegiatan</a></nav>
-    <nav class="
-      m-0 flex flex-col items-start gap-3 text-[.9375rem] [&>a]:text-inverse [&>a:hover]:underline
-      compact:first-of-type:pr-[58px] mobile:first-of-type:pr-0
-    " aria-label="Kanal resmi SiberMu"><h3 class="mb-1.5 font-sans text-[.94rem] font-semibold text-paper">Kanal resmi</h3><a href={sources.university} target="_blank" rel="noopener noreferrer">Website SiberMu</a><a href={sources.studentPortal} target="_blank" rel="noopener noreferrer">Portal Mahasiswa</a><a href={sources.academicHelp} target="_blank" rel="noopener noreferrer">Bantuan akademik</a><a href={sources.admissions} target="_blank" rel="noopener noreferrer">Admisi & KIP Kuliah</a></nav>
-    <section class="
-      mobile:col-span-full mobile:border-t mobile:border-[#3d5772] mobile:pt-6 [&_a]:inline-block
-      [&_a]:text-paper [&_a]:[overflow-wrap:anywhere] [&_a:hover]:underline [&_a:hover]:underline-offset-4
-    " aria-labelledby="footer-contact-title">
-      <h3 id="footer-contact-title" class="mb-1.5 pr-[54px] font-sans text-[.94rem] font-semibold text-paper">Hubungi kampus</h3>
-      <address class="mt-5 grid gap-[18px] text-[.9375rem] leading-[1.65] not-italic">
-        <div><span class="mb-[3px] block text-[.8125rem] text-inverse">Humas universitas</span><a href={`mailto:${universityContact.email}`}>{universityContact.email}</a></div>
-        <div><span class="mb-[3px] block text-[.8125rem] text-inverse">WhatsApp</span><a href={universityContact.whatsapp} target="_blank" rel="noopener noreferrer">{universityContact.phone}</a></div>
-        <div><span class="mb-[3px] block text-[.8125rem] text-inverse">Kampus pusat</span><a href={universityContact.maps} target="_blank" rel="noopener noreferrer">{universityContact.address}</a></div>
-      </address>
-    </section>
-    <a href="#beranda" class="
-      absolute top-0 right-0 flex size-[46px] items-center justify-center rounded-full border
-      border-[#718ba5] [&>svg]:-rotate-90 tablet:col-start-2 tablet:justify-self-end mobile:static
-      mobile:col-span-full
-    " aria-label="Kembali ke atas"><Icon name="arrow" size={24}/></a>
-  </div>
-  <details class="
-    border-t border-[#3d5772] [&>div]:max-w-[900px] [&>div]:pb-6 [&>div]:text-[.875rem]
-    [&>div]:text-inverse [&_ul]:mt-2.5 [&_ul]:list-disc [&_ul]:pl-5 [&_li]:my-1.5 [&_a]:underline
-  " id="kredit">
-    <summary class="flex items-center gap-3 py-[18px] text-[.875rem] text-inverse">Sumber konten & kredit aset <Icon name="plus" size={17}/></summary>
+<section
+  class="closing-backdrop relative text-paper **:focus-visible:outline-sky"
+  aria-labelledby="closing-title"
+>
+  <div
+    class="page-container flex min-h-57.5 items-center justify-between gap-12 pt-11
+    pb-7 stack:min-h-0 stack:flex-col stack:items-start stack:gap-6.5 mobile:pt-9.5 mobile:pb-6
+    [&_h2+p]:mt-4.25 [&_h2+p]:text-[1rem] [&_h2+p]:text-inverse"
+  >
     <div>
-      <p>Konsep landing page untuk kebutuhan lomba 2026. Halaman ini belum menjadi layanan resmi Universitas Siber Muhammadiyah.</p>
-      <ul>
-        <li>Organisasi dan UKM: <a href={sources.spmi} target="_blank" rel="noopener noreferrer">direktori dokumen resmi SiberMu, bagian C.3 Mahasiswa</a>, yang memuat laporan prestasi dan profil UKM serta SK pembina UKM. Profil UKM juga merujuk <a href={sources.businessClubPost} target="_blank" rel="noopener noreferrer">unggahan UKM Bisnis Digital</a> dan <a href={sources.digitalCreatorPost} target="_blank" rel="noopener noreferrer">unggahan resmi SiberMu tentang Digital Creator</a>.</li>
-        <li>Prestasi dan dokumentasi: {achievements.map((item, index) => <Fragment>{index > 0 && "; "}<a href={item.source} target="_blank" rel="noopener noreferrer">{item.shortNames} ({item.year})</a></Fragment>)}. Bersumber dari Instagram @sibermu dan berita resmi kampus.</li>
-        <li>Kegiatan kemahasiswaan: {activities.filter(item => item.category === 'mahasiswa').map((item, index) => <Fragment>{index > 0 && "; "}<a href={item.source} target="_blank" rel="noopener noreferrer">{item.title} ({item.timing})</a></Fragment>)}. Tanggal kegiatan mengikuti isi berita dan dapat berbeda dari tanggal terbit artikel.</li>
-        <li>Program AIK: <a href={sources.rectorReport} target="_blank" rel="noopener noreferrer">Laporan Rektor 2024, halaman 9–10</a>. Nilai AIK: <a href={sources.values} target="_blank" rel="noopener noreferrer">Risalah Islam Berkemajuan, Khazanah Muhammadiyah</a>.</li>
-        <li>Layanan: <a href={sources.academicHelp} target="_blank" rel="noopener noreferrer">artikel bantuan akademik</a>, <a href={sources.studentPortal} target="_blank" rel="noopener noreferrer">Portal Mahasiswa</a>, dan <a href={sources.admissions} target="_blank" rel="noopener noreferrer">laman Admisi SiberMu</a>.</li>
-        <li>Media sosial: <a href={sources.socialDirectory} target="_blank" rel="noopener noreferrer">direktori SiberMu</a>. Email dan alamat: <a href={sources.profile} target="_blank" rel="noopener noreferrer">profil resmi kampus</a>. Nomor WhatsApp mengacu pada brief lomba.</li>
-        <li>Lambang header dan footer diambil dari <a href={sources.logo} target="_blank" rel="noopener noreferrer">logo pada situs resmi SiberMu</a>. Bagian lambang dipadukan dengan teks identitas halaman; pada footer lambang ditampilkan dalam warna putih.</li>
-        <li>Ilustrasi hero, komunitas, AIK, dan penutup dibuat dengan OpenAI Imagegen. Tokoh dan bangunannya bersifat fiktif. Poster serta sertifikat pada bagian prestasi merupakan dokumentasi dari sumber kampus yang ditautkan di atas.</li>
-        <li>Font disediakan melalui Fontsource dengan SIL Open Font License 1.1: <a href="/licenses/Source-Serif-4-OFL.txt" target="_blank" rel="noopener noreferrer">Source Serif 4</a>, <a href="/licenses/Manrope-OFL.txt" target="_blank" rel="noopener noreferrer">Manrope</a>, dan <a href="/licenses/Public-Sans-OFL.txt" target="_blank" rel="noopener noreferrer">Public Sans</a>.</li>
-        <li>Ikon pengguna, buku, dan hati diadaptasi dari <a href="https://github.com/feathericons/feather" target="_blank" rel="noopener noreferrer">Feather Icons oleh Cole Bemis</a> dengan <a href="/licenses/Feather-MIT.txt" target="_blank" rel="noopener noreferrer">lisensi MIT</a>. Ikon lainnya ditulis sebagai SVG inline.</li>
-        <li>Simbol Instagram, TikTok, YouTube, dan Facebook digunakan untuk mengenali tautan ke masing-masing platform. Favicon geometris dibuat untuk konsep halaman ini dan bukan logo resmi universitas.</li>
-        <li>Tanggal dan tahun menunjukkan waktu kegiatan, capaian, publikasi, atau laporan sesuai keterangannya. Dokumentasi tersebut tidak menyatakan bahwa pendaftaran atau rekrutmen sedang dibuka.</li>
-      </ul>
+      <h2
+        id="closing-title"
+        class="font-editorial font-medium leading-[1.12] tracking-[-.035em] text-balance text-[clamp(2rem,3.2vw,2.8rem)] text-paper"
+      >
+        Masa kuliahmu adalah
+        <br />
+        sebuah perjalanan.
+      </h2>
+      <p>Temukan teman belajar. Kembangkan minatmu. Ambil bagian.</p>
     </div>
-  </details>
-  <div class="flex justify-between gap-5 border-t border-[#3d5772] py-[21px] text-[.8125rem] text-inverse mobile:flex-col mobile:gap-[5px]"><span>Kemahasiswaan & AIK · Universitas Siber Muhammadiyah</span></div>
-</div></footer>
+    <a
+      class="inline-flex items-center justify-center gap-6.25 rounded-md border border-transparent
+      font-semibold transition-[background,translate] duration-200 ease-[ease] hover:-translate-y-0.5
+      min-h-12.5 shrink-0 bg-paper px-5.5 py-3.25 text-[.92rem] text-navy hover:bg-sky"
+      href="#komunitas"
+    >
+      Temukan komunitasmu <Icon size={18} />
+    </a>
+  </div>
+  <p class="page-container pb-3.5 text-right text-[.75rem] text-inverse">
+    Ilustrasi AI · Bangunan fiktif
+  </p>
+</section>
+<footer class="bg-night pt-13.25 text-white **:focus-visible:outline-sky mobile:pt-10">
+  <div class="page-container">
+    <div
+      class="relative grid grid-cols-[minmax(0,1.4fr)_minmax(0,.85fr)_minmax(0,.85fr)_minmax(0,1.2fr)]
+    items-start justify-between gap-9 pb-8.75 *:min-w-0 compact:grid-cols-2 compact:gap-x-12
+    compact:gap-y-9 mobile:gap-x-5 mobile:gap-y-7"
+    >
+      <div class="compact:pr-0 mobile:col-span-full">
+        <a class="flex min-w-0 items-center gap-2.5 text-paper" href="#beranda">
+          <span
+            class="block shrink-0 overflow-hidden [&>img]:h-full [&>img]:w-auto [&>img]:max-w-none h-10.5 w-12
+          mobile:h-[38.5px] mobile:w-11 [&>img]:brightness-0 [&>img]:invert"
+            aria-hidden="true"
+          >
+            <img
+              src="/images/sibermu-emblem-official.webp"
+              width="208"
+              height="182"
+              alt=""
+              loading="lazy"
+            />
+          </span>
+          <span
+            class="block min-w-0 [&>strong]:block [&>strong]:font-display [&>strong]:font-bold
+          [&>strong]:leading-[1.3] [&>strong]:uppercase [&>small]:block [&>small]:font-normal [&>small]:leading-[1.4]
+          [&>strong]:text-[1rem] [&>small]:mt-1 [&>small]:text-[.75rem] [&>small]:text-inverse"
+          >
+            <strong>Kemahasiswaan & AIK</strong>
+            <small>Universitas Siber Muhammadiyah</small>
+          </span>
+        </a>
+        <p class="mt-3.5 max-w-[31ch] text-[.9375rem] text-inverse">
+          Ruang Tumbuh SiberMu.
+          <br />
+          Terhubung. Bertumbuh. Berkontribusi.
+        </p>
+        <nav
+          class="mt-5 flex flex-nowrap gap-2"
+          aria-label="Media sosial SiberMu"
+        >
+          {socialLinks.map((social) => (
+            <a
+              class="flex h-11 flex-[0_0_44px] items-center justify-center rounded-md border border-[#3d5772] text-inverse hover:text-paper hover:underline hover:underline-offset-4"
+              href={social.href}
+              target="_blank"
+              rel="noopener noreferrer"
+              aria-label={`${social.name} SiberMu (tab baru)`}
+              title={social.name}
+            >
+              <Icon name={social.icon} size={22} />
+            </a>
+          ))}
+        </nav>
+      </div>
+      <nav class={footerNavClass} aria-label="Jelajahi halaman">
+        <h3 class="mb-1.5 font-sans text-[.94rem] font-semibold text-paper">
+          Jelajahi
+        </h3>
+        <a href="#komunitas">Organisasi & komunitas</a>
+        <a href="#aik">Al-Islam & Kemuhammadiyahan</a>
+        <a href="#prestasi">Prestasi mahasiswa</a>
+        <a href="#kegiatan">Dokumentasi kegiatan</a>
+      </nav>
+      <nav class={footerNavClass} aria-label="Kanal resmi SiberMu">
+        <h3 class="mb-1.5 font-sans text-[.94rem] font-semibold text-paper">
+          Kanal resmi
+        </h3>
+        <a href={sources.university} target="_blank" rel="noopener noreferrer">
+          Website SiberMu
+        </a>
+        <a
+          href={sources.studentPortal}
+          target="_blank"
+          rel="noopener noreferrer"
+        >
+          Portal Mahasiswa
+        </a>
+        <a
+          href={sources.academicHelp}
+          target="_blank"
+          rel="noopener noreferrer"
+        >
+          Bantuan akademik
+        </a>
+        <a href={sources.admissions} target="_blank" rel="noopener noreferrer">
+          Admisi & KIP Kuliah
+        </a>
+      </nav>
+      <section
+        class="mobile:col-span-full mobile:border-t mobile:border-[#3d5772] mobile:pt-6 [&_a]:inline-block
+      [&_a]:text-paper [&_a]:wrap-anywhere [&_a:hover]:underline [&_a:hover]:underline-offset-4"
+        aria-labelledby="footer-contact-title"
+      >
+        <h3
+          id="footer-contact-title"
+          class="mb-1.5 pr-13.5 font-sans text-[.94rem] font-semibold text-paper"
+        >
+          Hubungi kampus
+        </h3>
+        <address class="mt-5 grid gap-4.5 text-[.9375rem] leading-[1.65] not-italic">
+          <div>
+            <span class="mb-0.75 block text-[.8125rem] text-inverse">
+              Humas universitas
+            </span>
+            <a href={`mailto:${universityContact.email}`}>
+              {universityContact.email}
+            </a>
+          </div>
+          <div>
+            <span class="mb-0.75 block text-[.8125rem] text-inverse">
+              WhatsApp
+            </span>
+            <a
+              href={universityContact.whatsapp}
+              target="_blank"
+              rel="noopener noreferrer"
+            >
+              {universityContact.phone}
+            </a>
+          </div>
+          <div>
+            <span class="mb-0.75 block text-[.8125rem] text-inverse">
+              Kampus pusat
+            </span>
+            <a
+              href={universityContact.maps}
+              target="_blank"
+              rel="noopener noreferrer"
+            >
+              {universityContact.address}
+            </a>
+          </div>
+        </address>
+      </section>
+      <a
+        href="#beranda"
+        class="absolute top-0 right-0 flex size-11.5 items-center justify-center rounded-full border
+      border-[#718ba5] [&>svg]:-rotate-90 tablet:col-start-2 tablet:justify-self-end mobile:static
+      mobile:col-span-full"
+        aria-label="Kembali ke atas"
+      >
+        <Icon name="arrow" size={24} />
+      </a>
+    </div>
+    <details
+      class="border-t border-[#3d5772] [&>div]:max-w-225 [&>div]:pb-6 [&>div]:text-[.875rem]
+    [&>div]:text-inverse [&_ul]:mt-2.5 [&_ul]:list-disc [&_ul]:pl-5 [&_li]:my-1.5 [&_a]:underline"
+      id="kredit"
+    >
+      <summary class="flex items-center gap-3 py-4.5 text-[.875rem] text-inverse">
+        Sumber konten & kredit aset <Icon name="plus" size={17} />
+      </summary>
+      <div>
+        <p>
+          Konsep landing page untuk kebutuhan lomba 2026. Halaman ini belum
+          menjadi layanan resmi Universitas Siber Muhammadiyah.
+        </p>
+        <ul>
+          <li>
+            Organisasi dan UKM:{' '}
+            <a href={sources.spmi} target="_blank" rel="noopener noreferrer">
+              direktori dokumen resmi SiberMu, bagian C.3 Mahasiswa
+            </a>
+            , yang memuat laporan prestasi dan profil UKM serta SK pembina UKM.
+            Profil UKM juga merujuk{' '}
+            <a
+              href={sources.businessClubPost}
+              target="_blank"
+              rel="noopener noreferrer"
+            >
+              unggahan UKM Bisnis Digital
+            </a>{' '}
+            dan{' '}
+            <a
+              href={sources.digitalCreatorPost}
+              target="_blank"
+              rel="noopener noreferrer"
+            >
+              unggahan resmi SiberMu tentang Digital Creator
+            </a>
+            .
+          </li>
+          <li>
+            Prestasi dan dokumentasi:{' '}
+            {achievements.map((item, index) => (
+              <Fragment>
+                {index > 0 && '; '}
+                <a href={item.source} target="_blank" rel="noopener noreferrer">
+                  {item.shortNames} ({item.year})
+                </a>
+              </Fragment>
+            ))}
+            . Bersumber dari Instagram @sibermu dan berita resmi kampus.
+          </li>
+          <li>
+            Kegiatan kemahasiswaan:{' '}
+            {activities
+              .filter((item) => item.category === 'mahasiswa')
+              .map((item, index) => (
+                <Fragment>
+                  {index > 0 && '; '}
+                  <a
+                    href={item.source}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                  >
+                    {item.title} ({item.timing})
+                  </a>
+                </Fragment>
+              ))}
+            . Tanggal kegiatan mengikuti isi berita dan dapat berbeda dari
+            tanggal terbit artikel.
+          </li>
+          <li>
+            Program AIK:{' '}
+            <a
+              href={sources.rectorReport}
+              target="_blank"
+              rel="noopener noreferrer"
+            >
+              Laporan Rektor 2024, halaman 9–10
+            </a>
+            . Nilai AIK:{' '}
+            <a href={sources.values} target="_blank" rel="noopener noreferrer">
+              Risalah Islam Berkemajuan, Khazanah Muhammadiyah
+            </a>
+            .
+          </li>
+          <li>
+            Layanan:{' '}
+            <a
+              href={sources.academicHelp}
+              target="_blank"
+              rel="noopener noreferrer"
+            >
+              artikel bantuan akademik
+            </a>
+            ,{' '}
+            <a
+              href={sources.studentPortal}
+              target="_blank"
+              rel="noopener noreferrer"
+            >
+              Portal Mahasiswa
+            </a>
+            , dan{' '}
+            <a
+              href={sources.admissions}
+              target="_blank"
+              rel="noopener noreferrer"
+            >
+              laman Admisi SiberMu
+            </a>
+            .
+          </li>
+          <li>
+            Media sosial:{' '}
+            <a
+              href={sources.socialDirectory}
+              target="_blank"
+              rel="noopener noreferrer"
+            >
+              direktori SiberMu
+            </a>
+            . Email dan alamat:{' '}
+            <a href={sources.profile} target="_blank" rel="noopener noreferrer">
+              profil resmi kampus
+            </a>
+            . Nomor WhatsApp mengacu pada brief lomba.
+          </li>
+          <li>
+            Lambang header dan footer diambil dari{' '}
+            <a href={sources.logo} target="_blank" rel="noopener noreferrer">
+              logo pada situs resmi SiberMu
+            </a>
+            . Bagian lambang dipadukan dengan teks identitas halaman; pada
+            footer lambang ditampilkan dalam warna putih.
+          </li>
+          <li>
+            Ilustrasi hero, komunitas, AIK, dan penutup dibuat dengan OpenAI
+            Imagegen. Tokoh dan bangunannya bersifat fiktif. Poster serta
+            sertifikat pada bagian prestasi merupakan dokumentasi dari sumber
+            kampus yang ditautkan di atas.
+          </li>
+          <li>
+            Font disediakan melalui Fontsource dengan SIL Open Font License 1.1:{' '}
+            <a
+              href="/licenses/Source-Serif-4-OFL.txt"
+              target="_blank"
+              rel="noopener noreferrer"
+            >
+              Source Serif 4
+            </a>
+            ,{' '}
+            <a
+              href="/licenses/Manrope-OFL.txt"
+              target="_blank"
+              rel="noopener noreferrer"
+            >
+              Manrope
+            </a>
+            , dan{' '}
+            <a
+              href="/licenses/Public-Sans-OFL.txt"
+              target="_blank"
+              rel="noopener noreferrer"
+            >
+              Public Sans
+            </a>
+            .
+          </li>
+          <li>
+            Ikon pengguna, buku, dan hati diadaptasi dari{' '}
+            <a
+              href="https://github.com/feathericons/feather"
+              target="_blank"
+              rel="noopener noreferrer"
+            >
+              Feather Icons oleh Cole Bemis
+            </a>{' '}
+            dengan{' '}
+            <a
+              href="/licenses/Feather-MIT.txt"
+              target="_blank"
+              rel="noopener noreferrer"
+            >
+              lisensi MIT
+            </a>
+            . Ikon lainnya ditulis sebagai SVG inline.
+          </li>
+          <li>
+            Simbol Instagram, TikTok, YouTube, dan Facebook digunakan untuk
+            mengenali tautan ke masing-masing platform. Favicon geometris dibuat
+            untuk konsep halaman ini dan bukan logo resmi universitas.
+          </li>
+          <li>
+            Tanggal dan tahun menunjukkan waktu kegiatan, capaian, publikasi,
+            atau laporan sesuai keterangannya. Dokumentasi tersebut tidak
+            menyatakan bahwa pendaftaran atau rekrutmen sedang dibuka.
+          </li>
+        </ul>
+      </div>
+    </details>
+    <div class="flex justify-between gap-5 border-t border-[#3d5772] py-5.25 text-[.8125rem] text-inverse mobile:flex-col mobile:gap-1.25">
+      <span>Kemahasiswaan & AIK · Universitas Siber Muhammadiyah</span>
+    </div>
+  </div>
+</footer>

@@ -2,48 +2,103 @@
 import Icon from './Icon.astro';
 import { sources } from '../data/content';
 const principles = [
-  { title: 'Pembinaan', description: 'Memperdalam pemahaman melalui kajian dan pembelajaran keislaman.' },
-  { title: 'Pengamalan', description: 'Menghubungkan nilai Islam dengan tindakan dan kepedulian sehari-hari.' },
-  { title: 'Kemuhammadiyahan', description: 'Mengenal semangat Islam berkemajuan: iman, ilmu, dan amal.' },
+  {
+    title: 'Pembinaan',
+    description:
+      'Memperdalam pemahaman melalui kajian dan pembelajaran keislaman.',
+  },
+  {
+    title: 'Pengamalan',
+    description:
+      'Menghubungkan nilai Islam dengan tindakan dan kepedulian sehari-hari.',
+  },
+  {
+    title: 'Kemuhammadiyahan',
+    description: 'Mengenal semangat Islam berkemajuan: iman, ilmu, dan amal.',
+  },
 ];
 ---
-<section class="bg-deep text-paper **:focus-visible:outline-sky" id="aik" aria-labelledby="aik-title">
+
+<section
+  class="bg-deep text-paper **:focus-visible:outline-sky"
+  id="aik"
+  aria-labelledby="aik-title"
+>
   <div class="relative isolate overflow-hidden stack:flex stack:flex-col">
-    <figure class="
-      aik-image-fade absolute inset-y-0 right-0 -z-1 w-[60%] max-w-210 stack:relative
-      stack:inset-auto stack:order-2 stack:z-0 stack:aspect-[1.5] stack:w-full stack:max-w-none
-    ">
-      <img class="h-full w-full object-cover object-[70%_45%] stack:absolute stack:inset-0 stack:object-[70%_center]" src="/images/aik-campus-v2.webp" srcset="/images/aik-campus-v2-small.webp 720w, /images/aik-campus-v2.webp 1440w" sizes="(max-width: 700px) 100vw, (max-width: 1400px) 60vw, 840px" width="1440" height="960" loading="lazy" decoding="async" alt="Ilustrasi AI mahasiswi beralmamater navy dan hijab krem memegang Al-Quran di lingkungan kampus imajinatif" />
-      <figcaption class="absolute right-4 bottom-3 z-1 bg-deep px-2 py-0.75 text-[.75rem] text-inverse">Ilustrasi AI · Tokoh & bangunan fiktif</figcaption>
+    <figure
+      class="aik-image-fade absolute inset-y-0 right-0 -z-1 w-[60%] max-w-210 stack:relative
+      stack:inset-auto stack:order-2 stack:z-0 stack:aspect-[1.5] stack:w-full stack:max-w-none"
+    >
+      <img
+        class="h-full w-full object-cover object-[70%_45%] stack:absolute stack:inset-0 stack:object-[70%_center]"
+        src="/images/aik-campus-v2.webp"
+        srcset="/images/aik-campus-v2-small.webp 720w, /images/aik-campus-v2.webp 1440w"
+        sizes="(max-width: 700px) 100vw, (max-width: 1400px) 60vw, 840px"
+        width="1440"
+        height="960"
+        loading="lazy"
+        decoding="async"
+        alt="Ilustrasi AI mahasiswi beralmamater navy dan hijab krem memegang Al-Quran di lingkungan kampus imajinatif"
+      />
+      <figcaption class="absolute right-4 bottom-3 z-1 bg-deep px-2 py-0.75 text-[.75rem] text-inverse">
+        Ilustrasi AI · Tokoh & bangunan fiktif
+      </figcaption>
     </figure>
-    <div class="
-      container mx-auto w-[min(1232px,calc(100%-112px))] compact:w-[calc(100%-64px)]
-      mobile:w-[calc(100%-40px)] relative flex min-h-105 items-center py-13.5
-      stack:order-1 stack:min-h-0 stack:pt-10.5 stack:pb-4.5
-    ">
-      <div class="
-        w-[48%] compact:w-[51%] stack:w-full [&>p:last-of-type]:mt-5.5
-        [&>p:last-of-type]:text-[1.14rem] [&>p:last-of-type]:leading-normal [&>p:last-of-type]:text-paper
-      ">
-        <h2 class="font-editorial font-medium leading-[1.12] tracking-[-.035em] text-balance text-[clamp(2.5rem,4.2vw,3.7rem)] text-paper mobile:text-[2.6rem]" id="aik-title">Teguh dalam nilai.</h2>
-        <p class="mt-4 text-[1.07rem] font-medium text-sky mobile:text-[1rem]">Al-Islam & Kemuhammadiyahan</p>
-        <p>Ilmu memberi kemampuan.<br />Nilai memberi arah.</p>
+    <div
+      class="page-container relative flex min-h-105 items-center py-13.5
+      stack:order-1 stack:min-h-0 stack:pt-10.5 stack:pb-4.5"
+    >
+      <div
+        class="w-[48%] compact:w-[51%] stack:w-full [&>p:last-of-type]:mt-5.5
+        [&>p:last-of-type]:text-[1.14rem] [&>p:last-of-type]:leading-normal [&>p:last-of-type]:text-paper"
+      >
+        <h2
+          class="font-editorial font-medium leading-[1.12] tracking-[-.035em] text-balance text-[clamp(2.5rem,4.2vw,3.7rem)] text-paper mobile:text-[2.6rem]"
+          id="aik-title"
+        >
+          Teguh dalam nilai.
+        </h2>
+        <p class="mt-4 text-[1.07rem] font-medium text-sky mobile:text-[1rem]">
+          Al-Islam & Kemuhammadiyahan
+        </p>
+        <p>
+          Ilmu memberi kemampuan.
+          <br />
+          Nilai memberi arah.
+        </p>
         <div class="mt-6.25 flex flex-wrap items-center gap-x-5 gap-y-2.5 mobile:gap-x-4.5 mobile:gap-y-2.25">
-          <a href="#kegiatan" data-activity-filter="aik" class="
-            inline-flex items-center justify-center gap-6.25 rounded-md border border-transparent
+          <a
+            href="#kegiatan"
+            data-activity-filter="aik"
+            class="inline-flex items-center justify-center gap-6.25 rounded-md border border-transparent
             font-semibold transition-[background,translate] duration-200 ease-[ease] hover:-translate-y-0.5 min-h-12
-            bg-paper px-5 py-2.75 text-[.9rem] text-navy hover:bg-sky
-          ">Jelajahi kegiatan AIK <Icon size={18}/></a>
-          <a href={sources.values} target="_blank" rel="noopener noreferrer" class="inline-flex min-h-11 items-center gap-3.25 font-semibold hover:underline text-[.875rem] text-inverse">Kenali Islam Berkemajuan <Icon name="diagonal" size={16}/></a>
+            bg-paper px-5 py-2.75 text-[.9rem] text-navy hover:bg-sky"
+          >
+            Jelajahi kegiatan AIK <Icon size={18} />
+          </a>
+          <a
+            href={sources.values}
+            target="_blank"
+            rel="noopener noreferrer"
+            class="inline-flex min-h-11 items-center gap-3.25 font-semibold hover:underline text-[.875rem] text-inverse"
+          >
+            Kenali Islam Berkemajuan <Icon name="diagonal" size={16} />
+          </a>
         </div>
       </div>
     </div>
   </div>
-  <dl class="
-    container mx-auto w-[min(1232px,calc(100%-112px))] compact:w-[calc(100%-64px)]
-    mobile:w-[calc(100%-40px)] grid grid-cols-3 pt-7 pb-8 stack:grid-cols-1 stack:pt-2
-    stack:pb-7
-  ">
-    {principles.map(item => <div class="px-8 first:pl-0 not-first:border-l not-first:border-[#3d5772] stack:px-0 stack:py-4.5 stack:not-first:border-t stack:not-first:border-l-0"><dt class="text-[1rem] font-semibold">{item.title}</dt><dd class="mt-2 max-w-[35ch] text-[.9375rem] text-inverse stack:max-w-[52ch]">{item.description}</dd></div>)}
+  <dl
+    class="page-container grid grid-cols-3 pt-7 pb-8 stack:grid-cols-1 stack:pt-2
+    stack:pb-7"
+  >
+    {principles.map((item) => (
+      <div class="px-8 first:pl-0 not-first:border-l not-first:border-[#3d5772] stack:px-0 stack:py-4.5 stack:not-first:border-t stack:not-first:border-l-0">
+        <dt class="text-[1rem] font-semibold">{item.title}</dt>
+        <dd class="mt-2 max-w-[35ch] text-[.9375rem] text-inverse stack:max-w-[52ch]">
+          {item.description}
+        </dd>
+      </div>
+    ))}
   </dl>
 </section>

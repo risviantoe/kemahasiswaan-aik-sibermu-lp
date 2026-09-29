@@ -5,16 +5,22 @@ import '@fontsource-variable/source-serif-4';
 import '../styles/global.css';
 import Analytics from '@vercel/analytics/astro';
 ---
+
 <!doctype html>
 <html lang="id">
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
-    <meta name="description" content="Ruang Tumbuh SiberMu: jelajahi komunitas, prestasi, Al-Islam dan Kemuhammadiyahan, serta layanan mahasiswa." />
+    <meta
+      name="description"
+      content="Ruang Tumbuh SiberMu: jelajahi komunitas, prestasi, Al-Islam dan Kemuhammadiyahan, serta layanan mahasiswa."
+    />
     <meta name="theme-color" content="#103063" />
     <link rel="icon" type="image/png" sizes="256x256" href="/favicon.png" />
     <title>Ruang Tumbuh | Kemahasiswaan & AIK SiberMu</title>
     <Analytics />
   </head>
-  <body><slot /></body>
+  <body>
+    <slot />
+  </body>
 </html>
