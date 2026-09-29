@@ -1,8 +1,13 @@
-import { defineConfig } from 'astro/config';
-import tailwindcss from '@tailwindcss/vite';
+import { defineConfig } from "astro/config";
+import tailwindcss from "@tailwindcss/vite";
 
 export default defineConfig({
-  output: 'static',
+  output: "static",
   devToolbar: { enabled: false },
   vite: { plugins: [tailwindcss()] },
+  adapter: vercel({
+    webAnalytics: {
+      enabled: true,
+    },
+  }),
 });
